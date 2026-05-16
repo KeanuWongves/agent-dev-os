@@ -1,0 +1,31 @@
+# Project state for the Weekly Report Assistant example.
+# Keep this file lightweight. Durable decisions belong in product/, architecture/, management/, or tasks/.
+project:
+  name: "Weekly Report Assistant"
+  status: "Ready"
+  current_milestone: "M1 commit evidence capture workflow"
+  source_of_truth:
+    product: "product/"
+    architecture: "architecture/"
+    management: "management/"
+    tasks: "tasks/"
+  last_updated: "2026-05-17"
+
+artifacts:
+  product_prd: "product/PRD.md"
+  product_mvp: "product/MVP.md"
+  roadmap: "product/ROADMAP.md"
+  user_stories: "product/USER_STORIES.md"
+  system_design: "architecture/SYSTEM_DESIGN.md"
+  tech_stack: "architecture/TECH_STACK.md"
+  api_spec: "architecture/API_SPEC.md"
+  code_rules: "architecture/CODE_RULES.md"
+  decisions: "architecture/DECISIONS.md"
+  master_plan: "management/MASTER_PLAN.md"
+  task_board: "management/TASK_BOARD.md"
+  validation_status: "management/VALIDATION_STATUS.md"
+
+current_focus:
+  role: "Code Agent"
+  artifact: "tasks/TASK-001-create-commit-summary-template/"
+  reason: "The artifact chain is ready; the next minimal action is to execute TASK-001."

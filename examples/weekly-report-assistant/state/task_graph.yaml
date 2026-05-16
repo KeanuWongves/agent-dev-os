@@ -1,0 +1,30 @@
+# Task dependency graph for folder-per-task work.
+# Mirror only task IDs, states, dependencies, and artifact paths. Task details live in each task folder.
+tasks:
+  - id: "TASK-001"
+    title: "Create commit summary template"
+    status: "Ready"
+    folder: "tasks/TASK-001-create-commit-summary-template/"
+    depends_on: []
+    blocks:
+      - "M2 weekly report outline workflow"
+    owner_role: "Code Agent"
+    source_artifacts:
+      - "product/PRD.md"
+      - "product/MVP.md"
+      - "product/USER_STORIES.md"
+      - "architecture/SYSTEM_DESIGN.md"
+      - "architecture/API_SPEC.md"
+      - "architecture/CODE_RULES.md"
+      - "management/MASTER_PLAN.md"
+      - "management/TASK_BOARD.md"
+    validation_gate: "VG-001, VG-002, VG-003, VG-004"
+
+status_vocabulary:
+  - "Backlog"
+  - "Ready"
+  - "In Progress"
+  - "Review"
+  - "Validation"
+  - "Done"
+  - "Blocked"

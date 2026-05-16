@@ -1,0 +1,47 @@
+# Ownership registry for the Weekly Report Assistant example.
+# Use roles first; add named humans only when the project requires it.
+roles:
+  pm_agent:
+    owns:
+      - "product/"
+    current_owner: null
+  architect_agent:
+    owns:
+      - "architecture/"
+    current_owner: null
+  lead_agent:
+    owns:
+      - "management/MASTER_PLAN.md"
+      - "management/STATUS.md"
+      - "management/CHANGELOG.md"
+    current_owner: null
+  task_manager_agent:
+    owns:
+      - "management/TASK_BOARD.md"
+      - "tasks/"
+      - "state/task_graph.yaml"
+      - "state/workflow_state.yaml"
+    current_owner: null
+  code_agent:
+    owns:
+      - "tasks/*/implementation.md"
+      - "tasks/*/test.md"
+      - "product/COMMIT_SUMMARY_TEMPLATE.md when executing TASK-001"
+    current_owner: null
+  review_agent:
+    owns:
+      - "tasks/*/review.md"
+    current_owner: null
+  qa_agent:
+    owns:
+      - "tasks/*/test.md"
+      - "management/VALIDATION_STATUS.md"
+    current_owner: null
+
+handoff_required_fields:
+  - "source artifact"
+  - "target artifact"
+  - "allowed scope"
+  - "required evidence"
+  - "next owner role"
+  - "stop conditions"

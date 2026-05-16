@@ -1,0 +1,34 @@
+# Workflow state for the Weekly Report Assistant example.
+# This file helps agents resume, but it does not replace artifact contents.
+workflow:
+  active_workflow: "tdd_task_execution"
+  active_role: "Code Agent"
+  active_artifact: "tasks/TASK-001-create-commit-summary-template/"
+  active_task: "TASK-001"
+  status: "Ready"
+  last_updated: "2026-05-17"
+
+resume_point:
+  stopped_at: "TASK-001 ready for Code Agent execution"
+  reason: "Round 2 example creates the artifact chain and task folder but does not execute the task."
+  next_minimal_action: "Code Agent reads task.md and plan.md, records TDD-not-applicable alternative validation in test.md, then creates product/COMMIT_SUMMARY_TEMPLATE.md."
+  required_inputs:
+    - "tasks/TASK-001-create-commit-summary-template/task.md"
+    - "tasks/TASK-001-create-commit-summary-template/plan.md"
+    - "architecture/API_SPEC.md"
+    - "architecture/CODE_RULES.md"
+
+handoff:
+  source_artifact: "tasks/TASK-001-create-commit-summary-template/task.md"
+  target_artifact: "tasks/TASK-001-create-commit-summary-template/implementation.md"
+  allowed_scope: "Create product/COMMIT_SUMMARY_TEMPLATE.md and update task-local implementation.md and test.md only."
+  required_evidence: "Artifact inspection, no-code/dependency scan, changed-file scope check, and recorded alternative validation."
+  next_owner_role: "Code Agent"
+  stop_conditions:
+    - "Task requires product source code or executable validation code."
+    - "Task requires a CLI, dependency, database, web UI, scheduler, service, or agent runtime."
+    - "Source artifacts or task artifacts conflict."
+
+blocked:
+  is_blocked: false
+  blocker_ids: []
