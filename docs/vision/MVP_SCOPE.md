@@ -44,7 +44,7 @@ Templates must exist for:
 
 Each task template must be narrow enough that a coding agent can execute from it without needing the entire chat history.
 
-Round 1 should normalize task instances into this structure:
+Task instances use this normalized structure:
 
 ```text
 tasks/TASK-XXX-short-title/

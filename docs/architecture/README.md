@@ -11,4 +11,4 @@ Architecture artifacts should answer:
 - Which tradeoffs were accepted?
 - What operational assumptions must implementation agents respect?
 
-For the initial template, use `templates/project/SYSTEM_DESIGN.md`.
+For new generated projects, use `templates/project/architecture/SYSTEM_DESIGN.md`, `templates/project/architecture/TECH_STACK.md`, `templates/project/architecture/API_SPEC.md`, `templates/project/architecture/CODE_RULES.md`, and `templates/project/architecture/DECISIONS.md`. Legacy flat templates remain in `templates/project/` for backward compatibility.

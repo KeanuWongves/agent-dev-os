@@ -12,7 +12,7 @@
 
 Codex must execute only the task folder or transitional task contract named above. If the task artifacts conflict with repository state, Codex should stop and report the conflict instead of expanding scope.
 
-Round 1 should normalize this plan into `tasks/TASK-XXX-short-title/plan.md`.
+For new task instances, use `tasks/TASK-XXX-short-title/plan.md`. This file remains available for transitional task instances.
 
 ## Files to Inspect First
 

@@ -11,4 +11,4 @@ Product artifacts should answer:
 - What is out of scope?
 - What must be true before implementation starts?
 
-For the initial template set, use `templates/project/PRD.md`, `templates/project/MVP.md`, and `templates/project/ROADMAP.md`.
+For new generated projects, use `templates/project/product/PRD.md`, `templates/project/product/MVP.md`, `templates/project/product/ROADMAP.md`, and `templates/project/product/USER_STORIES.md`. Legacy flat templates remain in `templates/project/` for backward compatibility.

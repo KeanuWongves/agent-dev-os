@@ -1,0 +1,45 @@
+# Ownership registry for generated projects.
+# Use roles first; add named humans only when the project requires it.
+roles:
+  pm_agent:
+    owns:
+      - "product/"
+    current_owner: null
+  architect_agent:
+    owns:
+      - "architecture/"
+    current_owner: null
+  lead_agent:
+    owns:
+      - "management/MASTER_PLAN.md"
+      - "management/STATUS.md"
+    current_owner: null
+  task_manager_agent:
+    owns:
+      - "management/TASK_BOARD.md"
+      - "tasks/"
+      - "state/task_graph.yaml"
+    current_owner: null
+  code_agent:
+    owns:
+      - "tasks/*/implementation.md"
+      - "tasks/*/test.md"
+      - "explicitly authorized src/ and tests/ paths"
+    current_owner: null
+  review_agent:
+    owns:
+      - "tasks/*/review.md"
+    current_owner: null
+  qa_agent:
+    owns:
+      - "tasks/*/test.md"
+      - "management/VALIDATION_STATUS.md"
+    current_owner: null
+
+handoff_required_fields:
+  - "source artifact"
+  - "target artifact"
+  - "allowed scope"
+  - "required evidence"
+  - "next owner role"
+  - "stop conditions"

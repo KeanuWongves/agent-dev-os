@@ -1,6 +1,6 @@
 # Workflows
 
-This directory will describe repeatable artifact workflows.
+This directory describes repeatable artifact workflows.
 
 ## Initial Workflow
 
@@ -20,7 +20,7 @@ Every workflow step should produce or update a repository artifact. A step that 
 
 ## Task Instance Workflow
 
-Future task instances should use:
+Task instances should use:
 
 ```text
 tasks/TASK-XXX-short-title/
@@ -31,4 +31,14 @@ tasks/TASK-XXX-short-title/
   review.md
 ```
 
-Round 1 should migrate the transitional task templates into this model. Until then, `TASK_CONTRACT.md` maps to `task.md`, and `CODEX_EXECUTION_PLAN.md` maps to `plan.md`.
+Canonical templates now exist for this model. `TASK_CONTRACT.md` maps to `task.md`, and `CODEX_EXECUTION_PLAN.md` maps to `plan.md` for older task instances.
+
+## Detailed Workflows
+
+- `product_discovery.md`
+- `architecture_planning.md`
+- `task_planning.md`
+- `tdd_task_execution.md`
+- `code_review.md`
+- `qa_validation.md`
+- `release.md`

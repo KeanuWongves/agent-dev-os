@@ -1,5 +1,7 @@
 # Task Contract: <TASK-ID> <Title>
 
+For new task instances, use `tasks/TASK-XXX-short-title/task.md`. This file remains available for transitional task instances.
+
 | Field | Value |
 | --- | --- |
 | Status | Draft |

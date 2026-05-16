@@ -1,0 +1,26 @@
+# Project state for a project generated from agent-dev-os.
+# Keep this file lightweight. Durable decisions belong in product/, architecture/, management/, or tasks/.
+project:
+  name: "<Project Name>"
+  status: "Draft"
+  current_milestone: null
+  source_of_truth:
+    product: "product/"
+    architecture: "architecture/"
+    management: "management/"
+    tasks: "tasks/"
+  last_updated: "YYYY-MM-DD"
+
+artifacts:
+  product_prd: "product/PRD.md"
+  product_mvp: "product/MVP.md"
+  roadmap: "product/ROADMAP.md"
+  system_design: "architecture/SYSTEM_DESIGN.md"
+  master_plan: "management/MASTER_PLAN.md"
+  task_board: "management/TASK_BOARD.md"
+  validation_status: "management/VALIDATION_STATUS.md"
+
+current_focus:
+  role: null
+  artifact: null
+  reason: null

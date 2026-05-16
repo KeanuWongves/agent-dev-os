@@ -40,7 +40,7 @@ tasks/TASK-XXX-short-title/
   review.md
 ```
 
-Current templates such as `templates/task/TASK_CONTRACT.md` and `templates/task/CODEX_EXECUTION_PLAN.md` are transitional. Round 1 should normalize them into the folder-per-task model above.
+Canonical task templates live in `templates/task/task.md`, `templates/task/plan.md`, `templates/task/implementation.md`, `templates/task/test.md`, and `templates/task/review.md`. `templates/task/TASK_CONTRACT.md` and `templates/task/CODEX_EXECUTION_PLAN.md` are retained as transitional compatibility templates.
 
 ## Role Contracts
 
@@ -50,9 +50,8 @@ Allowed artifact paths:
 
 - `docs/vision/`
 - `docs/product/`
-- `templates/project/PRD.md`
-- `templates/project/MVP.md`
-- `templates/project/ROADMAP.md`
+- `templates/project/product/`
+- Legacy compatibility files: `templates/project/PRD.md`, `templates/project/MVP.md`, `templates/project/ROADMAP.md`
 
 Forbidden actions:
 
@@ -82,7 +81,8 @@ Handoff requirements:
 Allowed artifact paths:
 
 - `docs/architecture/`
-- `templates/project/SYSTEM_DESIGN.md`
+- `templates/project/architecture/`
+- Legacy compatibility file: `templates/project/SYSTEM_DESIGN.md`
 - Architecture sections inside project-specific artifacts.
 
 Forbidden actions:
@@ -114,8 +114,9 @@ Allowed artifact paths:
 
 - `docs/management/`
 - `docs/workflows/`
-- `templates/project/MASTER_PLAN.md`
-- `templates/project/TASK_BOARD.md`
+- `templates/project/management/`
+- `templates/project/state/`
+- Legacy compatibility files: `templates/project/MASTER_PLAN.md`, `templates/project/TASK_BOARD.md`
 - Project-specific planning artifacts.
 
 Forbidden actions:
@@ -149,7 +150,8 @@ Allowed artifact paths:
 
 - `templates/task/`
 - `templates/codex-prompts/`
-- `templates/project/TASK_BOARD.md`
+- `templates/project/management/TASK_BOARD.md`
+- Legacy compatibility file: `templates/project/TASK_BOARD.md`
 - Project-specific `tasks/TASK-XXX-short-title/` folders.
 
 Forbidden actions:
@@ -264,7 +266,8 @@ Allowed artifact paths:
 
 - Project-specific `tasks/TASK-XXX-short-title/test.md`.
 - Project-specific validation artifacts.
-- `templates/project/VALIDATION_STATUS.md`.
+- `templates/project/management/VALIDATION_STATUS.md`.
+- Legacy compatibility file: `templates/project/VALIDATION_STATUS.md`.
 - `docs/management/` validation conventions.
 
 Forbidden actions:

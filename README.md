@@ -20,7 +20,7 @@ This first version intentionally contains structure and templates only. There is
 Use the repository like this:
 
 1. Start from `docs/vision/` to understand why the system exists.
-2. Copy files from `templates/project/` into a project workspace when bootstrapping a new product idea.
+2. Copy `templates/project/AGENTS.md` and the nested `templates/project/product/`, `architecture/`, `management/`, and `state/` directories into a project workspace when bootstrapping a new product idea.
 3. Convert approved project artifacts into task folders under a project-specific task board.
 4. Give Codex agents one task folder plus execution prompt templates from `templates/codex-prompts/`.
 5. Record validation and review results back into repository artifacts.
@@ -35,7 +35,7 @@ Use the repository like this:
 | `docs/management/` | Future planning, task-board, and validation-status conventions. |
 | `docs/workflows/` | Artifact lifecycle and handoff workflows for humans and agents. |
 | `docs/agents/` | Role boundaries and operating rules for AI agents. |
-| `templates/project/` | Project-level artifact templates. |
+| `templates/project/` | Target-project AGENTS template, nested project artifact templates, state templates, and legacy flat compatibility templates. |
 | `templates/task/` | Task-level contract and execution-plan templates. |
 | `templates/codex-prompts/` | Prompt scaffolds for Codex execution and review. |
 | `src/agent_dev_os/` | Reserved for small helper code after artifact conventions stabilize. |
@@ -52,7 +52,7 @@ Use the repository like this:
 
 ## Task Artifact Direction
 
-Future task instances should use a folder-per-task structure:
+Task instances should use a folder-per-task structure:
 
 ```text
 tasks/TASK-XXX-short-title/
@@ -63,7 +63,21 @@ tasks/TASK-XXX-short-title/
   review.md
 ```
 
-The current `templates/task/TASK_CONTRACT.md` and `templates/task/CODEX_EXECUTION_PLAN.md` files are transitional names. Round 1 should normalize the task templates into the folder-per-task model.
+Canonical templates live in `templates/task/task.md`, `templates/task/plan.md`, `templates/task/implementation.md`, `templates/task/test.md`, and `templates/task/review.md`. `templates/task/TASK_CONTRACT.md` and `templates/task/CODEX_EXECUTION_PLAN.md` remain as transitional compatibility templates.
+
+## Project Template Direction
+
+Generated projects should prefer the nested template structure:
+
+```text
+product/
+architecture/
+management/
+state/
+tasks/
+```
+
+`templates/project/AGENTS.md` defines target-project role contracts. The `state/` layer is lightweight resumability metadata; durable decisions still belong in product, architecture, management, and task artifacts.
 
 ## Not Implemented Yet
 

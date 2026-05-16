@@ -4,15 +4,28 @@ Copy this directory when starting a new software project under `agent-dev-os`.
 
 Recommended order:
 
-1. Fill `PRD.md`.
-2. Fill `MVP.md`.
-3. Fill `ROADMAP.md`.
-4. Fill `SYSTEM_DESIGN.md` for approved MVP scope.
-5. Fill `MASTER_PLAN.md`.
-6. Create tasks in `TASK_BOARD.md`.
-7. Generate one task folder under `tasks/TASK-XXX-short-title/`.
-8. Record review and validation in `REVIEW_REPORT.md` and `VALIDATION_STATUS.md`.
+1. Copy `AGENTS.md` into the target project root.
+2. Fill `product/PRD.md`.
+3. Fill `product/MVP.md`.
+4. Fill `product/ROADMAP.md` and `product/USER_STORIES.md` as needed.
+5. Fill `architecture/SYSTEM_DESIGN.md` for approved MVP scope.
+6. Fill architecture support artifacts when they constrain execution: `TECH_STACK.md`, `API_SPEC.md`, `CODE_RULES.md`, and `DECISIONS.md`.
+7. Fill `management/MASTER_PLAN.md`.
+8. Create tasks in `management/TASK_BOARD.md`.
+9. Generate one task folder under `tasks/TASK-XXX-short-title/`.
+10. Record review and validation in task-local `review.md`, task-local `test.md`, and `management/VALIDATION_STATUS.md`.
 
-Each artifact should name upstream sources and downstream consumers so future agents know how to resume.
+## Nested Structure
 
-Round 1 should normalize task templates so each task has `task.md`, `plan.md`, `implementation.md`, `test.md`, and `review.md`.
+| Directory | Purpose |
+| --- | --- |
+| `product/` | PRD, MVP, roadmap, and user stories. |
+| `architecture/` | System design, stack, APIs, code rules, and decisions. |
+| `management/` | Master plan, task board, blockers, status, changelog, and validation status. |
+| `state/` | Lightweight project state, task graph, ownership, and workflow state. |
+
+Each artifact should name upstream sources and downstream consumers so future agents know how to resume. `state/` helps with resumability but does not replace durable Markdown decisions.
+
+Task templates are normalized so each task has `task.md`, `plan.md`, `implementation.md`, `test.md`, and `review.md`.
+
+Legacy flat files such as `PRD.md`, `SYSTEM_DESIGN.md`, `TASK_BOARD.md`, and `VALIDATION_STATUS.md` remain for backward compatibility. New generated projects should use the nested files.

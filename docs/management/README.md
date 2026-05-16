@@ -11,4 +11,4 @@ Management artifacts should answer:
 - What has been reviewed?
 - What has been validated?
 
-For the initial templates, use `templates/project/MASTER_PLAN.md`, `templates/project/TASK_BOARD.md`, and `templates/project/VALIDATION_STATUS.md`.
+For new generated projects, use `templates/project/management/MASTER_PLAN.md`, `templates/project/management/TASK_BOARD.md`, `templates/project/management/BLOCKERS.md`, `templates/project/management/STATUS.md`, `templates/project/management/CHANGELOG.md`, and `templates/project/management/VALIDATION_STATUS.md`. Use `templates/project/state/` for lightweight resumability metadata. Legacy flat templates remain in `templates/project/` for backward compatibility.

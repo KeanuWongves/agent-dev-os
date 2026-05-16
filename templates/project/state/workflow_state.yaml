@@ -1,0 +1,27 @@
+# Workflow state for generated projects.
+# This file helps agents resume, but it does not replace artifact contents.
+workflow:
+  active_workflow: null
+  active_role: null
+  active_artifact: null
+  active_task: null
+  status: "Draft"
+  last_updated: "YYYY-MM-DD"
+
+resume_point:
+  stopped_at: null
+  reason: null
+  next_minimal_action: null
+  required_inputs: []
+
+handoff:
+  source_artifact: null
+  target_artifact: null
+  allowed_scope: null
+  required_evidence: null
+  next_owner_role: null
+  stop_conditions: []
+
+blocked:
+  is_blocked: false
+  blocker_ids: []

@@ -1,0 +1,22 @@
+# Task dependency graph for folder-per-task work.
+# Mirror only task IDs, states, dependencies, and artifact paths. Task details live in tasks/TASK-XXX-short-title/.
+tasks:
+  - id: "TASK-001"
+    title: "<short title>"
+    status: "Backlog"
+    folder: "tasks/TASK-001-short-title/"
+    depends_on: []
+    blocks: []
+    owner_role: "Task Manager Agent"
+    source_artifacts:
+      - "management/MASTER_PLAN.md"
+    validation_gate: null
+
+status_vocabulary:
+  - "Backlog"
+  - "Ready"
+  - "In Progress"
+  - "Review"
+  - "Validation"
+  - "Done"
+  - "Blocked"

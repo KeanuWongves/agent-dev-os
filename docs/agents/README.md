@@ -1,6 +1,6 @@
 # Agent Operating Model
 
-This directory will hold detailed agent guidance. The root `AGENTS.md` is the active rulebook for this repository.
+This directory holds detailed role contracts. The root `AGENTS.md` is the active rulebook for this repository.
 
 ## Agent Handoff Model
 
@@ -19,6 +19,16 @@ Agents should move work through explicit artifacts:
 ## Core Rule
 
 An agent may use chat for discussion, but durable project state belongs in the repository.
+
+## Detailed Role Contracts
+
+- `PM_AGENT.md`
+- `ARCHITECT_AGENT.md`
+- `LEAD_AGENT.md`
+- `TASK_MANAGER_AGENT.md`
+- `CODE_AGENT.md`
+- `REVIEW_AGENT.md`
+- `QA_AGENT.md`
 
 ## Task Artifact Direction
 
