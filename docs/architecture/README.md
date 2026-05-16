@@ -1,6 +1,6 @@
 # Architecture Artifacts
 
-This directory will hold architecture conventions for projects using `agentic-dev-os`.
+This directory will hold architecture conventions for projects using `agent-dev-os`.
 
 Architecture artifacts should answer:
 

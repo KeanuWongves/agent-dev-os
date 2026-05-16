@@ -3,19 +3,19 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Planning Agent or human owner> |
+| Owner | <Task Manager Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
 | Source Plan | <MASTER_PLAN.md path> |
 
 ## Board Policy
 
-Only tasks with a task contract may move to `Ready`. Execution agents should pick one `Ready` task at a time.
+Only tasks with a task folder may move to `Ready`. Code Agents should pick one `Ready` task at a time.
 
 ## Status Columns
 
 - `Backlog`: identified but not yet contracted.
-- `Ready`: task contract exists and dependencies are satisfied.
-- `In Progress`: assigned to an execution agent.
+- `Ready`: task folder exists and dependencies are satisfied.
+- `In Progress`: assigned to a Code Agent.
 - `Review`: implementation complete, awaiting review.
 - `Validation`: review accepted, awaiting validation evidence.
 - `Done`: validation criteria met.
@@ -23,9 +23,9 @@ Only tasks with a task contract may move to `Ready`. Execution agents should pic
 
 ## Tasks
 
-| Task ID | Title | Status | Contract | Depends On | Owner | Notes |
+| Task ID | Title | Status | Task Folder | Depends On | Owner | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| TASK-001 | <title> | Backlog | <path> | <dependencies> | <role/person> | <notes> |
+| TASK-001 | <title> | Backlog | `tasks/TASK-001-short-title/` | <dependencies> | <role/person> | <notes> |
 
 ## Blockers
 
@@ -35,7 +35,7 @@ Only tasks with a task contract may move to `Ready`. Execution agents should pic
 
 ## Board Review Checklist
 
-- Every `Ready` task has a contract.
+- Every `Ready` task has a task folder with `task.md`, `plan.md`, `implementation.md`, `test.md`, and `review.md`.
 - Every `In Progress` task has exactly one current owner.
 - Blocked tasks name a concrete next action.
 - Done tasks link to validation evidence.

@@ -39,16 +39,27 @@ Each template should include status, owner, scope, assumptions, decisions, open 
 
 Templates must exist for:
 
-- task contract
+- task folder content
 - Codex execution plan
 
 Each task template must be narrow enough that a coding agent can execute from it without needing the entire chat history.
+
+Round 1 should normalize task instances into this structure:
+
+```text
+tasks/TASK-XXX-short-title/
+  task.md
+  plan.md
+  implementation.md
+  test.md
+  review.md
+```
 
 ### Agent Prompts
 
 Prompt scaffolds must exist for:
 
-- executing a task contract
+- executing a task folder
 - reviewing completed work
 
 These prompts should point agents back to artifacts instead of asking them to infer from conversation.
@@ -66,7 +77,7 @@ These prompts should point agents back to artifacts instead of asking them to in
 ## MVP Acceptance Criteria
 
 - A new project can be bootstrapped by copying `templates/project/`.
-- A task can be expressed by copying `templates/task/TASK_CONTRACT.md`.
+- A task can be expressed by creating a `tasks/TASK-XXX-short-title/` folder.
 - A Codex execution prompt can be created from `templates/codex-prompts/EXECUTE_TASK.md`.
-- A reviewer can compare implementation output against the task contract.
+- A reviewer can compare implementation output against the task folder artifacts.
 - Validation evidence can be recorded without relying on chat history.

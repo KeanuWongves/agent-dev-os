@@ -1,6 +1,6 @@
 # Management Artifacts
 
-This directory will hold planning and status conventions for projects using `agentic-dev-os`.
+This directory will hold planning and status conventions for projects using `agent-dev-os`.
 
 Management artifacts should answer:
 

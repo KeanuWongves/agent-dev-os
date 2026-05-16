@@ -8,13 +8,29 @@ Agents should move work through explicit artifacts:
 
 | From Role | Artifact Produced | Next Role |
 | --- | --- | --- |
-| Product Agent | PRD, MVP, roadmap | Architecture Agent |
-| Architecture Agent | system design | Planning Agent |
-| Planning Agent | master plan, task board, task contract | Execution Agent |
-| Execution Agent | code changes, execution notes | Review Agent |
-| Review Agent | review report | Validation Agent |
-| Validation Agent | validation status | Product or Planning Agent |
+| PM Agent | PRD, MVP, roadmap | Architect Agent |
+| Architect Agent | system design | Lead Agent |
+| Lead Agent | master plan, task board | Task Manager Agent |
+| Task Manager Agent | task folder, execution prompt | Code Agent |
+| Code Agent | code changes, implementation notes, test notes | Review Agent |
+| Review Agent | review report | QA Agent |
+| QA Agent | validation status | Lead Agent or Task Manager Agent |
 
 ## Core Rule
 
 An agent may use chat for discussion, but durable project state belongs in the repository.
+
+## Task Artifact Direction
+
+Future task instances should live in:
+
+```text
+tasks/TASK-XXX-short-title/
+  task.md
+  plan.md
+  implementation.md
+  test.md
+  review.md
+```
+
+The root `AGENTS.md` defines the active role contracts and handoff requirements.

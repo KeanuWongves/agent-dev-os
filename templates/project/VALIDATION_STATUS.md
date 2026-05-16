@@ -3,9 +3,9 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Validation Agent or human owner> |
+| Owner | <QA Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
-| Source Artifacts | <task contracts, review reports, master plan> |
+| Source Artifacts | <task folders, review reports, master plan> |
 
 ## Validation Summary
 

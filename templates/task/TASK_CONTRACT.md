@@ -3,8 +3,8 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Planning Agent or human owner> |
-| Execution Agent | <unassigned or agent name> |
+| Owner | <Task Manager Agent or human owner> |
+| Code Agent | <unassigned or agent name> |
 | Last Updated | YYYY-MM-DD |
 | Source Plan | <MASTER_PLAN.md path> |
 | Source Design | <SYSTEM_DESIGN.md path> |
@@ -24,7 +24,7 @@
 
 ## Out of Scope
 
-- <Work the execution agent must not do in this task.>
+- <Work the Code Agent must not do in this task.>
 
 ## Acceptance Criteria
 

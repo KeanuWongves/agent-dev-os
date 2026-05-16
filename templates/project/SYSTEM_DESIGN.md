@@ -3,10 +3,10 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Architecture Agent or human owner> |
+| Owner | <Architect Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
 | Source Artifacts | <PRD path>, <MVP path> |
-| Downstream Consumers | master plan, task contracts, review reports |
+| Downstream Consumers | master plan, task folders, review reports |
 
 ## Design Summary
 
@@ -57,7 +57,7 @@
 
 ## Implementation Guardrails
 
-- <Rule that execution agents must follow.>
+- <Rule that Code Agents must follow.>
 
 ## Open Technical Questions
 

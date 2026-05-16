@@ -2,7 +2,7 @@
 
 ## Working Name
 
-agentic-dev-os
+agent-dev-os
 
 ## One-Sentence Description
 
@@ -27,7 +27,7 @@ This repository should start as a documented artifact system:
 
 - Canonical folders for vision, product, architecture, management, workflows, agents, templates, examples, source, and tests.
 - Markdown templates that can be copied into real projects.
-- Role rules in `AGENTS.md` so agents know whether they are acting as product planner, architect, executor, reviewer, or validator.
+- Role contracts in `AGENTS.md` so agents know whether they are acting as PM, architect, lead, task manager, code executor, reviewer, or QA validator.
 - Future helper code only after template usage reveals repeated mechanical work.
 
 ## Source of Truth
@@ -40,7 +40,7 @@ The first useful version is not a CLI. It is a clean repository with enough stru
 
 1. Read the vision.
 2. Bootstrap a project artifact set from templates.
-3. Convert a project plan into task contracts.
-4. Execute one task from a contract.
+3. Convert a project plan into folder-per-task artifacts.
+4. Execute one task from a task folder.
 5. Produce a review report.
 6. Record validation status.

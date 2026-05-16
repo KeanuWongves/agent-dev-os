@@ -3,10 +3,10 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Planning Agent or human owner> |
+| Owner | <Lead Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
 | Source Artifacts | <PRD path>, <MVP path>, <system design path> |
-| Downstream Consumers | task board, task contracts |
+| Downstream Consumers | task board, task folders |
 
 ## Objective
 
@@ -28,7 +28,7 @@
 
 | Task ID | Title | Scope | Required Artifact | Status |
 | --- | --- | --- | --- | --- |
-| TASK-001 | <title> | <narrow scope> | <task contract path> | Draft |
+| TASK-001 | <title> | <narrow scope> | `tasks/TASK-001-short-title/` | Draft |
 
 ## Validation Gates
 
@@ -45,5 +45,5 @@
 ## Plan Update Rules
 
 - If product scope changes, update PRD or MVP first.
-- If design constraints change, update system design before task contracts.
+- If design constraints change, update system design before task folders.
 - If task ordering changes, update this plan and the task board.

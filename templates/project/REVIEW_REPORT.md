@@ -5,8 +5,8 @@
 | Status | Draft |
 | Reviewer | <Review Agent or human reviewer> |
 | Last Updated | YYYY-MM-DD |
-| Reviewed Scope | <task contract, PR, commit, file set, or artifact set> |
-| Source Artifacts | <task contract>, <system design>, <MVP> |
+| Reviewed Scope | <task folder, PR, commit, file set, or artifact set> |
+| Source Artifacts | <task folder>, <system design>, <MVP> |
 
 ## Review Verdict
 
@@ -27,7 +27,7 @@ Status: `<Needs Changes | Accepted With Notes | Accepted | Blocked>`
 ## Scope Check
 
 - Files or artifacts changed: <list>
-- Scope matched task contract: Yes/No/Partial
+- Scope matched task folder: Yes/No/Partial
 - Unexpected changes: <list or none>
 
 ## Test and Validation Review

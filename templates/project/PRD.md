@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Product Agent or human owner> |
+| Owner | <PM Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
 | Upstream Context | <idea, notes, user interview, issue, or brief> |
 | Downstream Consumers | MVP, roadmap, system design, master plan |

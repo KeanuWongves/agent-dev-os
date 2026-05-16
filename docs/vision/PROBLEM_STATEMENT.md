@@ -17,7 +17,7 @@ A normal software repository usually contains source code, tests, and maybe a RE
 
 ```text
 idea -> PRD -> MVP -> roadmap -> system design -> master plan -> task board
-     -> task contract -> code-agent execution plan -> review -> validation
+     -> task folder -> code-agent execution plan -> review -> validation
 ```
 
 Without that chain, AI agents are forced to reconstruct intent from incomplete context.

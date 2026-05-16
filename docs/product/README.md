@@ -1,6 +1,6 @@
 # Product Artifacts
 
-This directory will hold product-management conventions for projects using `agentic-dev-os`.
+This directory will hold product-management conventions for projects using `agent-dev-os`.
 
 Product artifacts should answer:
 

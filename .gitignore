@@ -1,4 +1,6 @@
 .DS_Store
+.agent-dev-os/
+.codex/
 __pycache__/
 *.py[cod]
 .pytest_cache/

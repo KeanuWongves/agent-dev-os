@@ -1,4 +1,4 @@
-"""agentic-dev-os package placeholder.
+"""agent-dev-os package placeholder.
 
 Runtime helpers will be added only after the artifact workflow stabilizes.
 """

@@ -3,7 +3,7 @@
 | Field | Value |
 | --- | --- |
 | Status | Draft |
-| Owner | <Planning Agent or human owner> |
+| Owner | <Lead Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
 | Source Artifacts | <PRD path>, <MVP path> |
 | Downstream Consumers | master plan, task board |
