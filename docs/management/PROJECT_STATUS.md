@@ -6,7 +6,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 
 | Field | Value |
 | --- | --- |
-| Repository Stage | Round 2.4 Human Review Gates |
+| Repository Stage | Round 2.5 Approval Metadata Sync |
 | Latest Completed Dogfood Round | Round 2 |
 | Round 2 Result | PASS WITH MINOR FIXES |
 | Active Constraint | Documentation and template refinement only; no CLI, dependencies, product code, database, web UI, MCP server, OMX integration, agent runtime, scheduler, service, or validation code. |
@@ -25,6 +25,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Round 2.2 | Completed with required synchronization fixes | Research Layer added explicit reference research before product discovery, with source logging, scans, feature matrix, gap analysis, reuse decisions, PM Research Mode, and PRD research inputs. Round 2.3 applies the required repository-wide synchronization. |
 | Round 2.3 | Completed | Research Layer synchronized across root README, root AGENTS, generated-project state templates, evidence confidence fields, and management docs. |
 | Round 2.4 | Completed | Human Review Gates added explicit recorded approval requirements before research, PRD/MVP, architecture, high-risk task execution, implementation exceptions, and release acceptance unlock downstream work. |
+| Round 2.5 | Completed | Approval Metadata Sync added local human approval metadata to product, architecture, and task templates so gate requirements are visible when opening a single artifact. |
 
 ## Round 2 Findings Captured
 
@@ -64,6 +65,15 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Workflow handoffs | Research, product discovery, architecture planning, task planning, TDD task execution, and release workflows now hand off to the relevant gate. | Validate in the Bilibili example. |
 | Agent rules | Root `AGENTS.md` and `templates/project/AGENTS.md` now prevent agents from self-approving gate-controlled artifacts. | Keep role contracts aligned with gate rules. |
 | Status tracking | `MASTER_PLAN.md`, `TASK_BOARD.md`, `STATUS.md`, `project_state.yaml`, `ownership.yaml`, and `workflow_state.yaml` now include human gate, approval, and ownership fields. | Check field friction during dogfood. |
+
+## Round 2.5 Approval Metadata Sync
+
+| Area | Captured As | Follow-Up |
+| --- | --- | --- |
+| Product approval metadata | `templates/project/product/PRD.md`, `MVP.md`, `ROADMAP.md`, and `USER_STORIES.md`. | Validate during the Bilibili example before architecture planning. |
+| Architecture approval metadata | `templates/project/architecture/SYSTEM_DESIGN.md`, `TECH_STACK.md`, `API_SPEC.md`, `CODE_RULES.md`, and `DECISIONS.md`. | Validate before task planning starts. |
+| Task approval metadata | `templates/task/task.md` and `templates/task/plan.md`. | Validate before any non-trivial or high-risk task becomes `Ready`. |
+| Deferred P2 items | Template simplification, light/full task split, and gate strictness changes are intentionally deferred. | Revisit only after dogfood evidence. |
 
 ## Open Management Watchpoints
 

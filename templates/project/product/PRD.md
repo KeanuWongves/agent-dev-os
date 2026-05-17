@@ -7,9 +7,17 @@ Template rule: do not use this PRD to authorize implementation until status is `
 | Status | Draft |
 | Owner | <PM Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | Gate 2: PRD / MVP Approval |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
 | Upstream Context | <idea, notes, user interview, issue, or brief> |
 | Research Status | <complete / waived / not required / incomplete> |
 | Downstream Consumers | `product/MVP.md`, `product/ROADMAP.md`, `architecture/SYSTEM_DESIGN.md`, `management/MASTER_PLAN.md` |
+
+Approval rule: agents may draft this PRD, but must not mark it `Approved` unless Gate 2 approval or waiver is recorded in `management/APPROVALS.md` and linked above.
 
 ## Summary
 

@@ -21,6 +21,20 @@ Template rule: every placeholder must be replaced before the task can move to `R
 | Readiness Decision | <Draft/Ready/Blocked> |
 | Artifact-only task? | <Yes/No> |
 
+## Human Approval
+
+| Field | Value |
+| --- | --- |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | <Gate 4: Task Plan Approval / Gate 5: Implementation Exception Review / none> |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
+| Gate Not Required Rationale | <why Gate 4 is not required for a low-risk task, or N/A> |
+
+Task rule: use Gate 4 when the task is non-trivial or high-risk. Low-risk tasks may use `none`, but must record a not-required rationale. Code Agent must stop if `Required Human Gate` is Gate 4 or Gate 5 and `Approval Status` is not `approved`, `waived`, or `not required`.
+
 ## Owner
 
 | Role | Owner |
@@ -166,11 +180,16 @@ If no command is applicable, replace the block with `N/A - <reason>` and define 
 - The task requires changing files outside Expected Edit Surface or Allowed Changes.
 - The task requires a new dependency, CLI, database, web UI, service, scheduler, agent runtime, or validation code not explicitly authorized above.
 - An artifact-only task creates source code, test code, runtime code, or validation scripts without explicit authorization above.
+- Required Human Gate is Gate 4 or Gate 5 and Approval Status is not `approved`, `waived`, or explicitly `not required`.
 - TDD is skipped without a recorded reason and alternative validation method in `test.md`.
 - Validation cannot be run and no alternative evidence is approved in this task contract.
 
 ## Readiness Checklist
 
+- [ ] Human approval status is recorded.
+- [ ] Gate 4 approval or waiver exists for non-trivial or high-risk tasks.
+- [ ] Low-risk tasks that skip Gate 4 record a not-required rationale.
+- [ ] Approval artifact is linked when approval is required.
 - [ ] Source artifacts are named with paths and relevant sections or IDs.
 - [ ] Allowed Changes name exact paths or explicitly state `N/A - <reason>`.
 - [ ] Forbidden Changes cover known out-of-scope changes.

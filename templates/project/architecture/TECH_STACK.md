@@ -7,8 +7,16 @@ Template rule: a technology is allowed only when it is listed here or explicitly
 | Status | Draft |
 | Owner | <Architect Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | Gate 3: Architecture Approval |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
 | Source Artifacts | `product/MVP.md`, `architecture/SYSTEM_DESIGN.md` |
 | Downstream Consumers | `architecture/CODE_RULES.md`, `tasks/` |
+
+Approval rule: architecture artifacts may be drafted before approval, but implementation planning must not treat this stack as approved until Gate 3 approval or waiver is recorded in `management/APPROVALS.md` and linked above.
 
 ## Approved Stack
 

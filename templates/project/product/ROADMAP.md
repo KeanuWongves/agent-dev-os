@@ -7,8 +7,16 @@ Template rule: roadmap milestones describe product outcomes, not implementation 
 | Status | Draft |
 | Owner | <Lead Agent, PM Agent, or human owner> |
 | Last Updated | YYYY-MM-DD |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | <Gate 2: PRD / MVP Approval when roadmap changes MVP scope / none with rationale> |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
 | Source Artifacts | `product/PRD.md`, `product/MVP.md` |
 | Downstream Consumers | `management/MASTER_PLAN.md`, `management/TASK_BOARD.md` |
+
+Approval rule: agents may draft this roadmap, but must not mark it `Approved` for MVP-scope changes unless Gate 2 approval or waiver is recorded in `management/APPROVALS.md` and linked above. If Gate 2 is not required, record the not-required rationale in `Required Human Gate` or `Next Human Decision Needed`.
 
 ## Release Strategy
 

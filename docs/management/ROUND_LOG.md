@@ -14,6 +14,7 @@ This log records repository-level dogfood and template evolution rounds. It is a
 | Round 2.2 | Completed with required synchronization fixes | Added a research-first layer before product discovery, including reference research templates, PM Research Mode, source traceability rules, product discovery gates, PRD research inputs, and management status updates. Follow-up synchronization was required across README, root agent rules, state templates, evidence confidence fields, and management status. | Git commit `11e9675`; `templates/project/research/`; `docs/workflows/reference_research.md`; `docs/agents/PM_AGENT.md`; `templates/project/product/PRD.md` |
 | Round 2.3 | Completed | Synchronized the Research Layer across repository README, root role contracts, generated-project state templates, evidence confidence fields, and management docs. | `README.md`; root `AGENTS.md`; `templates/project/state/`; `templates/project/research/`; `docs/management/` |
 | Round 2.4 | Completed | Added explicit human review gates that define when AI agents may draft artifacts, when they must stop, and which human approvals unlock downstream work. | `docs/workflows/human_review_gates.md`; `templates/project/management/HUMAN_REVIEW_GATES.md`; `templates/project/management/APPROVALS.md`; workflow docs; AGENTS templates |
+| Round 2.5 | Completed | Added local human approval metadata to product, architecture, and task templates so agents can see gate requirements when opening a single artifact. P2 simplification work remains deferred to future dogfood. | `templates/project/product/`; `templates/project/architecture/`; `templates/task/task.md`; `templates/task/plan.md`; `templates/project/README.md` |
 
 ## Round 2 Findings
 
@@ -102,6 +103,19 @@ Round 2.4 adds human review gates across the artifact workflow. Agents may draft
 | Gate 4: Task Plan Approval | Execution of non-trivial or high-risk task folders. |
 | Gate 5: Implementation Exception Review | Continued implementation after scope, dependency, runtime, credential, external API, scraping, or validation exceptions. |
 | Gate 6: Release / Final Acceptance | Final acceptance, milestone closure, and release completion. |
+
+## Round 2.5 Scope
+
+Round 2.5 synchronizes approval metadata into gate-controlled product, architecture, and task templates. This pass does not simplify templates, change gate strictness, execute dogfood work, or create the Bilibili example.
+
+## Round 2.5 Approval Metadata Sync
+
+| Area | Result |
+| --- | --- |
+| Product templates | `PRD.md`, `MVP.md`, `ROADMAP.md`, and `USER_STORIES.md` expose local Gate 2 approval metadata or a not-required rationale. |
+| Architecture templates | `SYSTEM_DESIGN.md`, `TECH_STACK.md`, `API_SPEC.md`, `CODE_RULES.md`, and `DECISIONS.md` expose local Gate 3 approval metadata when they constrain implementation. |
+| Task templates | `task.md` and `plan.md` expose Gate 4 or Gate 5 approval metadata, readiness checks, and stop conditions. |
+| Project README | Generated projects now state that gate-controlled artifacts must show local approval metadata, not only an approval-log entry. |
 
 ## Proposed Round 3 Focus
 

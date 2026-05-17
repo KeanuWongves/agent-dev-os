@@ -7,8 +7,16 @@ Template rule: code rules are implementation constraints, not style preferences.
 | Status | Draft |
 | Owner | <Architect Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | Gate 3: Architecture Approval |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
 | Source Artifacts | `architecture/SYSTEM_DESIGN.md`, `architecture/TECH_STACK.md` |
 | Downstream Consumers | `tasks/`, `tasks/*/review.md` |
+
+Approval rule: architecture artifacts may be drafted before approval, but implementation planning must not treat these code rules as approved until Gate 3 approval or waiver is recorded in `management/APPROVALS.md` and linked above.
 
 ## Scope
 

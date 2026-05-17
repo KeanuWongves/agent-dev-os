@@ -29,6 +29,8 @@ Recommended order:
 
 Each artifact should name upstream sources and downstream consumers so future agents know how to resume. `state/` helps with resumability but does not replace durable Markdown decisions.
 
+Gate-controlled product, architecture, and task artifacts should expose approval metadata locally, not only in `management/APPROVALS.md`. Do not mark product or architecture artifacts `Approved`, and do not mark task artifacts `Ready`, unless the local approval metadata points to a valid approval, waiver, or explicit not-required rationale.
+
 Task templates are normalized so each task has `task.md`, `plan.md`, `implementation.md`, `test.md`, and `review.md`.
 
 Legacy flat files such as `PRD.md`, `SYSTEM_DESIGN.md`, `TASK_BOARD.md`, and `VALIDATION_STATUS.md` remain for backward compatibility. New generated projects should use the nested files.

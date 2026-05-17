@@ -18,6 +18,20 @@ Template rule: every implementation step must trace to an acceptance criterion i
 | Execution Owner | <Code Agent, human owner, or unassigned> |
 | Artifact-only task? | <Yes/No> |
 
+## Human Approval
+
+| Field | Value |
+| --- | --- |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | <Gate 4: Task Plan Approval / Gate 5: Implementation Exception Review / none> |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
+| Gate Not Required Rationale | <mirror task.md rationale, or N/A> |
+
+Plan rule: this section must mirror `task.md`. Low-risk tasks may use `none`, but must record a not-required rationale. Code Agent must stop if `Required Human Gate` is Gate 4 or Gate 5 and `Approval Status` is not `approved`, `waived`, or `not required`.
+
 ## Files to Inspect
 
 | Path | Required Section or Lines | Purpose |
@@ -44,6 +58,14 @@ Use this section when `Artifact-only task?` is `Yes`. If the task is not artifac
 - Acceptable alternative validation examples are manual artifact inspection, file existence check, changed-file scope check, and no-code/dependency scan.
 - The plan must name which alternative validation modes are required before implementation starts and which are required before review.
 - Validation evidence must be recorded in `test.md`; the plan itself is not validation evidence.
+
+## Pre-execution Approval Check
+
+- [ ] Human approval status from `task.md` is mirrored in this plan.
+- [ ] Gate 4 approval or waiver exists for non-trivial or high-risk tasks before execution begins.
+- [ ] Low-risk tasks that skip Gate 4 record a not-required rationale.
+- [ ] Approval artifact is linked when approval is required.
+- [ ] Code Agent stops before implementation when Required Human Gate is Gate 4 or Gate 5 and Approval Status is not `approved`, `waived`, or explicitly `not required`.
 
 ## Step-by-step Plan
 
@@ -102,6 +124,7 @@ If no command is applicable, replace the block with `N/A - <reason>` and define 
 - The required change needs files outside the allowed scope.
 - The work requires a new dependency, CLI, database, web UI, service, scheduler, agent runtime, or validation code not explicitly authorized by `task.md`.
 - An artifact-only task would create source code, test code, runtime code, validation scripts, dependency manifests, CLIs, services, databases, schedulers, web UIs, or agent runtimes not explicitly authorized by `task.md`.
+- Required Human Gate is Gate 4 or Gate 5 and Approval Status is not `approved`, `waived`, or explicitly `not required`.
 - TDD is skipped without a recorded reason and alternative validation in `test.md`.
 - Validation cannot be run and no alternative evidence is approved in `task.md`.
 

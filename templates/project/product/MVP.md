@@ -7,8 +7,16 @@ Template rule: implementation tasks may include only capabilities listed as incl
 | Status | Draft |
 | Owner | <PM Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
+| Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
+| Approval Log | `management/APPROVALS.md` |
+| Required Human Gate | Gate 2: PRD / MVP Approval |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / rejected / needs revision / blocked> |
+| Approval Artifact | <management/APPROVALS.md#APP-XXX or N/A> |
+| Next Human Decision Needed | <decision or N/A> |
 | Source PRD | `product/PRD.md` |
 | Downstream Consumers | `product/ROADMAP.md`, `architecture/SYSTEM_DESIGN.md`, `management/MASTER_PLAN.md` |
+
+Approval rule: agents may draft this MVP, but must not mark it `Approved` unless Gate 2 approval or waiver is recorded in `management/APPROVALS.md` and linked above.
 
 ## MVP Objective
 
