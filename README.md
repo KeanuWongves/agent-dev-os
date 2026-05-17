@@ -24,7 +24,8 @@ Use the repository like this:
 2. Run reference research when external references, repositories, products, creators, papers, screenshots, or reuse decisions may affect scope.
 3. Copy `templates/project/AGENTS.md` plus the nested `research/`, `product/`, `architecture/`, `management/`, and `state/` directories into a project workspace.
 4. Fill product artifacts using research outputs or an explicit research waiver.
-5. Continue to architecture, planning, task folders, execution, review, and QA.
+5. Record required human approvals or waivers before treating research, PRD/MVP, architecture, high-risk task plans, implementation exceptions, or release artifacts as approved.
+6. Continue to architecture, planning, task folders, execution, review, and QA.
 
 ## Directory Map
 
@@ -34,7 +35,7 @@ Use the repository like this:
 | `docs/product/` | Future product-management conventions and PRD guidance. |
 | `docs/architecture/` | Future system-design conventions and architecture decisions. |
 | `docs/management/` | Future planning, task-board, and validation-status conventions. |
-| `docs/workflows/` | Artifact lifecycle and handoff workflows for humans and agents, including `reference_research.md`. |
+| `docs/workflows/` | Artifact lifecycle and handoff workflows for humans and agents, including `reference_research.md` and `human_review_gates.md`. |
 | `docs/agents/` | Role boundaries and operating rules for AI agents. |
 | `templates/project/` | Target-project AGENTS template, nested project artifact templates, state templates, and legacy flat compatibility templates. |
 | `templates/project/research/` | Research templates for source logging, reference analysis, feature comparison, gap analysis, and reuse decisions. |

@@ -76,6 +76,23 @@ PM Agent in Research Mode.
 3. Treat license unknown, access restrictions, proprietary status, or unclear ownership as stop conditions for reuse.
 4. A reuse decision may inform PRD, MVP, tech stack, or architecture, but does not authorize implementation by itself.
 
+## Human Review Gate Handoff
+
+Reference research must hand off to Gate 1: Research Review before PRD drafting or approval.
+
+Required handoff artifacts:
+
+- `research/RESEARCH_BRIEF.md`
+- `research/SOURCE_LOG.md`
+- `research/OPEN_SOURCE_SCAN.md` or explicit waiver
+- `research/REFERENCE_PRODUCT_ANALYSIS.md` or explicit waiver
+- `research/FEATURE_MATRIX.md`
+- `research/GAP_ANALYSIS.md`
+- `research/REUSE_DECISIONS.md`
+- unresolved source gaps and human-provided-required items
+
+AI agents may draft and revise research artifacts before Gate 1 approval. They must not draft or approve PRD/MVP from unreviewed research, turn low-confidence findings into MVP scope, or recommend open-source reuse without license evidence. Gate 1 approval, limitation, rejection, or waiver must be recorded in `management/APPROVALS.md`.
+
 ## Verification Rules
 
 - No product requirement may cite an unlogged source.
@@ -84,6 +101,7 @@ PM Agent in Research Mode.
 - Inaccessible sources must be marked `human-provided required`.
 - Closed-source references may influence observable workflow patterns but must not be copied.
 - PRD approval requires completed research artifacts or an explicit research waiver recorded in PRD and research brief.
+- Product discovery must not draft or approve PRD/MVP from reference findings until Gate 1 is recorded in `management/APPROVALS.md`.
 
 ## Common Failure Modes
 
@@ -96,7 +114,7 @@ PM Agent in Research Mode.
 
 ## Handoff to Product Discovery
 
-Hand off to `product_discovery.md` with:
+After Gate 1 is recorded, hand off to `product_discovery.md` with:
 
 - `research/RESEARCH_BRIEF.md`
 - `research/SOURCE_LOG.md`
@@ -107,5 +125,6 @@ Hand off to `product_discovery.md` with:
 - `research/REUSE_DECISIONS.md`
 - unresolved source gaps and human-provided-required items
 - research waiver if applicable
+- Gate 1 approval record from `management/APPROVALS.md`
 
 Product discovery may approve PRD or MVP only when this handoff is complete or explicitly waived.

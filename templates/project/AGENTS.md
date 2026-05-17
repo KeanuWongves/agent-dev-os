@@ -24,7 +24,7 @@ These paths should be ignored by Git and must not be required for portable proje
 | `research/` | Reference research, source logs, open-source scans, reference-product analysis, feature matrix, gap analysis, and reuse decisions. |
 | `product/` | Product requirements, MVP scope, roadmap, and user stories. |
 | `architecture/` | System design, technical constraints, interface contracts, code rules, and decisions. |
-| `management/` | Master plan, task board, blockers, status, changelog, and validation status. |
+| `management/` | Master plan, task board, human review gates, approvals, blockers, status, changelog, and validation status. |
 | `tasks/` | Folder-per-task contracts, plans, implementation logs, tests, and reviews. |
 | `state/` | Lightweight project state, task graph, ownership, and workflow state. |
 | `src/` | Application source code when tasks explicitly authorize source changes. |
@@ -36,6 +36,7 @@ These paths should be ignored by Git and must not be required for portable proje
 - Do not execute implementation work from a vague idea. First produce or update the relevant artifact.
 - Do not invent product requirements without marking them as assumptions in the relevant artifact.
 - Do not approve PRD or MVP when reference research is required unless `research/` artifacts are complete or an explicit waiver is recorded.
+- Agents may draft artifacts, but they must not mark research, PRD/MVP, architecture, high-risk task plans, implementation exceptions, or release artifacts as `Approved`, `Ready`, `Validated`, or accepted unless the required human approval is recorded in `management/APPROVALS.md`.
 - Do not invent dates. When filling dates, use the current local date provided by the human owner. If the current date is unknown, leave `YYYY-MM-DD` rather than guessing. Future dates are not allowed unless explicitly describing scheduled future work.
 - Keep role boundaries explicit. If switching roles, name the artifact that authorizes the switch.
 - Keep changes inspectable: prefer small explicit artifacts over hidden state.

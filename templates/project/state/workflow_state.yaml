@@ -18,6 +18,14 @@ research_gate:
     - "research/GAP_ANALYSIS.md"
     - "research/REUSE_DECISIONS.md"
 
+human_review:
+  required_human_gate: null
+  approval_status: "not required"
+  approval_artifact: null
+  next_human_decision_needed: null
+  gate_definitions: "management/HUMAN_REVIEW_GATES.md"
+  approval_log: "management/APPROVALS.md"
+
 resume_point:
   stopped_at: null
   reason: null

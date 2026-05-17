@@ -24,6 +24,8 @@ artifacts:
   product_mvp: "product/MVP.md"
   roadmap: "product/ROADMAP.md"
   system_design: "architecture/SYSTEM_DESIGN.md"
+  human_review_gates: "management/HUMAN_REVIEW_GATES.md"
+  approvals: "management/APPROVALS.md"
   master_plan: "management/MASTER_PLAN.md"
   task_board: "management/TASK_BOARD.md"
   validation_status: "management/VALIDATION_STATUS.md"

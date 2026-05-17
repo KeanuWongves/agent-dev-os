@@ -13,6 +13,7 @@ This log records repository-level dogfood and template evolution rounds. It is a
 | Round 2.1 | Completed | Converted Round 2 review findings into artifact-only task support, pre-execution status conventions, interface naming guidance, dogfood notes template, and management status artifacts. | Git commit `568c6c4`; `templates/task/`; `templates/project/DOGFOOD_NOTES.md`; `docs/management/` |
 | Round 2.2 | Completed with required synchronization fixes | Added a research-first layer before product discovery, including reference research templates, PM Research Mode, source traceability rules, product discovery gates, PRD research inputs, and management status updates. Follow-up synchronization was required across README, root agent rules, state templates, evidence confidence fields, and management status. | Git commit `11e9675`; `templates/project/research/`; `docs/workflows/reference_research.md`; `docs/agents/PM_AGENT.md`; `templates/project/product/PRD.md` |
 | Round 2.3 | Completed | Synchronized the Research Layer across repository README, root role contracts, generated-project state templates, evidence confidence fields, and management docs. | `README.md`; root `AGENTS.md`; `templates/project/state/`; `templates/project/research/`; `docs/management/` |
+| Round 2.4 | Completed | Added explicit human review gates that define when AI agents may draft artifacts, when they must stop, and which human approvals unlock downstream work. | `docs/workflows/human_review_gates.md`; `templates/project/management/HUMAN_REVIEW_GATES.md`; `templates/project/management/APPROVALS.md`; workflow docs; AGENTS templates |
 
 ## Round 2 Findings
 
@@ -85,6 +86,22 @@ Round 2.3 synchronizes the Research Layer across repository-level guidance and g
 | State templates | `project_state.yaml`, `ownership.yaml`, and `workflow_state.yaml` now represent `research/` and the PRD research gate. |
 | Evidence confidence | Source log, reference-product analysis, feature matrix, and gap analysis now use `high`, `medium`, `low`, and `unknown` confidence values. |
 | Management status | Project status now points to the next planned dogfood round: a Bilibili video analysis channel research-first example. |
+
+## Round 2.4 Scope
+
+Round 2.4 adds human review gates across the artifact workflow. Agents may draft artifacts before review, but must not mark gate-controlled artifacts as approved, ready, validated, or accepted unless the required human decision is recorded in `management/APPROVALS.md`.
+
+## Round 2.4 Gate Additions
+
+| Gate | Unlocks |
+| --- | --- |
+| Gate 0: Idea Intake Review | Research brief or product discovery when research is waived. |
+| Gate 1: Research Review | PRD/MVP drafting and use of research findings. |
+| Gate 2: PRD / MVP Approval | Architecture planning from approved product scope. |
+| Gate 3: Architecture Approval | Master planning and implementation task planning. |
+| Gate 4: Task Plan Approval | Execution of non-trivial or high-risk task folders. |
+| Gate 5: Implementation Exception Review | Continued implementation after scope, dependency, runtime, credential, external API, scraping, or validation exceptions. |
+| Gate 6: Release / Final Acceptance | Final acceptance, milestone closure, and release completion. |
 
 ## Proposed Round 3 Focus
 

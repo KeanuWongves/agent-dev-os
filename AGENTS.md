@@ -25,6 +25,7 @@ These paths are ignored by Git and must not be required for portable repository 
 - Do not invent product requirements without marking them as assumptions in the relevant artifact.
 - Do not invent dates. When filling dates, use the current local date provided by the human owner. If the current date is unknown, leave `YYYY-MM-DD` rather than guessing. Future dates are not allowed unless explicitly describing scheduled future work.
 - Do not execute implementation work from a vague idea. First produce or update the relevant artifact.
+- Agents may draft artifacts, but they must not mark research, PRD/MVP, architecture, high-risk task plans, implementation exceptions, or release artifacts as `Approved`, `Ready`, `Validated`, or accepted unless the required human approval is recorded in `management/APPROVALS.md` or the repository's approved management status artifact.
 - Keep role boundaries explicit. If switching roles, state which artifact authorizes the switch.
 - For task execution, use the folder-per-task direction described in this file even while legacy templates still exist.
 

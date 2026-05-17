@@ -12,6 +12,8 @@ roles:
     current_owner: null
   lead_agent:
     owns:
+      - "management/HUMAN_REVIEW_GATES.md"
+      - "management/APPROVALS.md"
       - "management/MASTER_PLAN.md"
       - "management/STATUS.md"
     current_owner: null

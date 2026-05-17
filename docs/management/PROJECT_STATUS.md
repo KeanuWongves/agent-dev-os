@@ -6,7 +6,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 
 | Field | Value |
 | --- | --- |
-| Repository Stage | Round 2.3 Research Layer Synchronization |
+| Repository Stage | Round 2.4 Human Review Gates |
 | Latest Completed Dogfood Round | Round 2 |
 | Round 2 Result | PASS WITH MINOR FIXES |
 | Active Constraint | Documentation and template refinement only; no CLI, dependencies, product code, database, web UI, MCP server, OMX integration, agent runtime, scheduler, service, or validation code. |
@@ -24,6 +24,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Round 2.1 | Completed | Converted Round 2 findings into artifact-only task support, pre-execution status conventions, interface naming guidance, dogfood notes template, and management status artifacts. |
 | Round 2.2 | Completed with required synchronization fixes | Research Layer added explicit reference research before product discovery, with source logging, scans, feature matrix, gap analysis, reuse decisions, PM Research Mode, and PRD research inputs. Round 2.3 applies the required repository-wide synchronization. |
 | Round 2.3 | Completed | Research Layer synchronized across root README, root AGENTS, generated-project state templates, evidence confidence fields, and management docs. |
+| Round 2.4 | Completed | Human Review Gates added explicit recorded approval requirements before research, PRD/MVP, architecture, high-risk task execution, implementation exceptions, and release acceptance unlock downstream work. |
 
 ## Round 2 Findings Captured
 
@@ -54,6 +55,16 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Generated-project state | `templates/project/state/project_state.yaml`, `ownership.yaml`, and `workflow_state.yaml` now include research ownership, artifact pointers, and PRD research gate metadata. | Validate during the next example. |
 | Evidence confidence | `SOURCE_LOG.md`, `REFERENCE_PRODUCT_ANALYSIS.md`, `FEATURE_MATRIX.md`, and `GAP_ANALYSIS.md` now include `high`, `medium`, `low`, and `unknown` confidence values. | Low or unknown confidence must become assumptions, validation items, or `research more` decisions before MVP approval. |
 
+## Round 2.4 Human Review Gates
+
+| Area | Captured As | Follow-Up |
+| --- | --- | --- |
+| Gate workflow | `docs/workflows/human_review_gates.md` defines Gate 0 through Gate 6. | Use before creating the next example. |
+| Generated-project approvals | `templates/project/management/HUMAN_REVIEW_GATES.md` and `APPROVALS.md`. | Copy into every generated project. |
+| Workflow handoffs | Research, product discovery, architecture planning, task planning, TDD task execution, and release workflows now hand off to the relevant gate. | Validate in the Bilibili example. |
+| Agent rules | Root `AGENTS.md` and `templates/project/AGENTS.md` now prevent agents from self-approving gate-controlled artifacts. | Keep role contracts aligned with gate rules. |
+| Status tracking | `MASTER_PLAN.md`, `TASK_BOARD.md`, `STATUS.md`, `project_state.yaml`, `ownership.yaml`, and `workflow_state.yaml` now include human gate, approval, and ownership fields. | Check field friction during dogfood. |
+
 ## Open Management Watchpoints
 
 | Watchpoint | Risk | Proposed Owner |
@@ -64,6 +75,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Validation evidence can be confused with validation code. | Agents may add scripts when manual/static checks were sufficient. | QA Agent |
 | Research claims may be invented. | PRD/MVP may encode unsupported competitor or repository facts. | PM Agent in Research Mode |
 | Reuse may be recommended without license evidence. | Downstream architecture may adopt unsafe or incompatible dependencies. | PM Agent in Research Mode and Architect Agent |
+| Human approval may drift into chat only. | Downstream agents may treat unrecorded decisions as approved scope. | Human owner and Lead Agent |
 
 ## Proposed Next Round
 

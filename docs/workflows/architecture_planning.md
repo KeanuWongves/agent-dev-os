@@ -13,6 +13,7 @@ Architect Agent.
 - PRD, MVP, roadmap, and user stories.
 - Product constraints, non-goals, assumptions, and success criteria.
 - Existing architecture artifacts and decisions when present.
+- Gate 2 approval recorded in `management/APPROVALS.md`.
 
 ## Procedure
 
@@ -25,6 +26,7 @@ Architect Agent.
 7. Record enforceable implementation constraints in `CODE_RULES.md`.
 8. Capture meaningful tradeoffs in `DECISIONS.md`.
 9. Escalate to PM Agent when product scope is ambiguous or contradictory.
+10. Hand off drafted architecture artifacts to Gate 3: Architecture Approval before implementation planning starts.
 
 ## Required Outputs
 
@@ -32,6 +34,7 @@ Architect Agent.
 - Updated tech stack, API spec, code rules, and decisions as needed.
 - Open technical questions with required resolution timing.
 - Handoff to Lead Agent.
+- Gate 3 approval request or approval record in `management/APPROVALS.md`.
 
 ## Verification Rules
 
@@ -40,6 +43,7 @@ Architect Agent.
 - New dependencies require an explicit decision and downstream task authorization.
 - Implementation guardrails must be enforceable by review or validation.
 - Artifact-only interface specs may describe file or artifact contracts and must not expand scope into runtime work.
+- Implementation planning may start only after Gate 3 approval is recorded in `management/APPROVALS.md`.
 
 ## Common Failure Modes
 
@@ -51,4 +55,6 @@ Architect Agent.
 
 ## Handoff to Next Workflow
 
-Hand off to task planning through Lead Agent with source architecture artifacts, allowed technical scope, required evidence, sequencing constraints, next owner role, and stop conditions.
+Hand off to Gate 3 with architecture artifacts, product traceability, dependency policy, runtime-surface decisions, open technical questions, and stop conditions.
+
+After Gate 3 is recorded, hand off to task planning through Lead Agent with source architecture artifacts, Gate 3 approval record, allowed technical scope, required evidence, sequencing constraints, next owner role, and stop conditions.
