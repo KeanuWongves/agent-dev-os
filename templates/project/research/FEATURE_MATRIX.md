@@ -14,13 +14,16 @@ Template rule: every feature comparison must cite a logged source or be marked a
 
 Allowed decisions: `include`, `defer`, `reject`, `research more`.
 
-| Feature ID | Feature | Reference Source | User Value | Implementation Complexity | MVP Relevance | Evidence | Decision |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| FEAT-001 | <capability or workflow step> | <SRC/OSS/REF ID> | <why a user benefits> | <low / medium / high / unknown> | <must / should / could / no> | <source claim, screenshot, README section, note, or assumption ID> | <allowed decision> |
+Evidence confidence values: `high`, `medium`, `low`, `unknown`.
+
+| Feature ID | Feature | Reference Source | User Value | Implementation Complexity | MVP Relevance | Evidence Confidence | Evidence | Decision |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| FEAT-001 | <capability or workflow step> | <SRC/OSS/REF ID> | <why a user benefits> | <low / medium / high / unknown> | <must / should / could / no> | <high / medium / low / unknown> | <source claim, screenshot, README section, note, or assumption ID> | <allowed decision> |
 
 ## Decision Rules
 
 - Use `include` only when user value is clear, evidence exists, and MVP relevance is `must` or explicitly justified.
+- Do not use `include` for low or unknown confidence unless the PRD records the feature as an assumption or creates a follow-up validation requirement before MVP approval.
 - Use `defer` when valuable but not needed for MVP.
 - Use `reject` when it violates non-goals, constraints, ethics, privacy, license, or MVP focus.
 - Use `research more` when source evidence is weak, inaccessible, or contradictory.

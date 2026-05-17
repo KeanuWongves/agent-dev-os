@@ -18,9 +18,11 @@ Allowed access statuses: `fetched`, `partially fetched`, `inaccessible`, `human-
 
 Allowed uses: `reuse`, `learn`, `compare`, `ignore`, `restricted`.
 
-| Source ID | Source Name | URL | Source Type | Access Status | Evidence Type | Last Checked Date | Reliability Notes | Allowed Use |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SRC-001 | <name> | <URL or local artifact path> | <allowed source type> | <allowed access status> | <README, docs, screenshot, landing page, demo video, paper, human note> | YYYY-MM-DD | <bias, stale data, partial access, unverifiable claims> | <allowed use> |
+Allowed evidence confidence values: `high`, `medium`, `low`, `unknown`.
+
+| Source ID | Source Name | URL | Source Type | Access Status | Evidence Type | Evidence Confidence | Last Checked Date | Reliability Notes | Allowed Use |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SRC-001 | <name> | <URL or local artifact path> | <allowed source type> | <allowed access status> | <README, docs, screenshot, landing page, demo video, paper, human note> | <high / medium / low / unknown> | YYYY-MM-DD | <bias, stale data, partial access, unverifiable claims> | <allowed use> |
 
 ## Human-provided Required Sources
 
@@ -36,3 +38,4 @@ Use this section when a source cannot be fetched by the agent.
 - Mark inaccessible sources as `human-provided required`; do not infer facts from memory, snippets, names, or popularity.
 - Record `restricted` when source terms, license, privacy, or proprietary status make reuse unsafe.
 - Closed-source products may be used for comparison and learning from observable patterns, not copying.
+- Low or unknown evidence confidence cannot directly authorize MVP scope. Convert it into an explicit assumption, a follow-up validation item, or a `research more` decision before product approval.

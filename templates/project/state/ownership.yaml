@@ -3,6 +3,7 @@
 roles:
   pm_agent:
     owns:
+      - "research/"
       - "product/"
     current_owner: null
   architect_agent:

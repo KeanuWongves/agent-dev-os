@@ -5,6 +5,7 @@ project:
   status: "Draft"
   current_milestone: null
   source_of_truth:
+    research: "research/"
     product: "product/"
     architecture: "architecture/"
     management: "management/"
@@ -12,6 +13,13 @@ project:
   last_updated: "YYYY-MM-DD"
 
 artifacts:
+  research_brief: "research/RESEARCH_BRIEF.md"
+  source_log: "research/SOURCE_LOG.md"
+  open_source_scan: "research/OPEN_SOURCE_SCAN.md"
+  reference_product_analysis: "research/REFERENCE_PRODUCT_ANALYSIS.md"
+  feature_matrix: "research/FEATURE_MATRIX.md"
+  gap_analysis: "research/GAP_ANALYSIS.md"
+  reuse_decisions: "research/REUSE_DECISIONS.md"
   product_prd: "product/PRD.md"
   product_mvp: "product/MVP.md"
   roadmap: "product/ROADMAP.md"

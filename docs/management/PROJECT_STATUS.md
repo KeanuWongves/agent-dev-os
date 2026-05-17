@@ -6,12 +6,12 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 
 | Field | Value |
 | --- | --- |
-| Repository Stage | Round 2.2 Research Layer |
+| Repository Stage | Round 2.3 Research Layer Synchronization |
 | Latest Completed Dogfood Round | Round 2 |
 | Round 2 Result | PASS WITH MINOR FIXES |
 | Active Constraint | Documentation and template refinement only; no CLI, dependencies, product code, database, web UI, MCP server, OMX integration, agent runtime, scheduler, service, or validation code. |
 | Date Correction Scope | Skipped per human instruction; do not replace `2026-05-17` with `2026-05-16`. |
-| Next Active Dogfood Example | New Bilibili video analysis channel example; do not create it until the next round. |
+| Next Planned Round | Bilibili video analysis channel research-first example; do not create it until the next round. |
 
 ## Completed Rounds
 
@@ -22,7 +22,8 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Round 1 | Completed | Canonical nested project templates, role docs, workflow docs, project-local AGENTS template, and folder-per-task artifacts. |
 | Round 2 | PASS WITH MINOR FIXES | Weekly Report Assistant example proved the artifact chain and exposed traceability, artifact-only, pre-execution, and interface-naming issues. |
 | Round 2.1 | Completed | Converted Round 2 findings into artifact-only task support, pre-execution status conventions, interface naming guidance, dogfood notes template, and management status artifacts. |
-| Round 2.2 | Completed | Research Layer added explicit reference research before product discovery, with source logging, scans, feature matrix, gap analysis, reuse decisions, PM Research Mode, and PRD research inputs. |
+| Round 2.2 | Completed with required synchronization fixes | Research Layer added explicit reference research before product discovery, with source logging, scans, feature matrix, gap analysis, reuse decisions, PM Research Mode, and PRD research inputs. Round 2.3 applies the required repository-wide synchronization. |
+| Round 2.3 | Completed | Research Layer synchronized across root README, root AGENTS, generated-project state templates, evidence confidence fields, and management docs. |
 
 ## Round 2 Findings Captured
 
@@ -44,6 +45,15 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Closed-source/reference products | `REFERENCE_PRODUCT_ANALYSIS.md`. | Learn observable patterns without copying proprietary content. |
 | PM Research Mode | `docs/agents/PM_AGENT.md` and `templates/project/AGENTS.md`. | Keep research, product, and implementation roles separate. |
 
+## Round 2.3 Research Layer Synchronization
+
+| Area | Captured As | Follow-Up |
+| --- | --- | --- |
+| Repository use flow | `README.md` now places reference research before product discovery when references or reuse decisions may affect scope. | Use this flow for the next dogfood example. |
+| Repository role contract | Root `AGENTS.md` now includes PM Research Mode for maintaining this repository. | Keep repository templates and project templates aligned. |
+| Generated-project state | `templates/project/state/project_state.yaml`, `ownership.yaml`, and `workflow_state.yaml` now include research ownership, artifact pointers, and PRD research gate metadata. | Validate during the next example. |
+| Evidence confidence | `SOURCE_LOG.md`, `REFERENCE_PRODUCT_ANALYSIS.md`, `FEATURE_MATRIX.md`, and `GAP_ANALYSIS.md` now include `high`, `medium`, `low`, and `unknown` confidence values. | Low or unknown confidence must become assumptions, validation items, or `research more` decisions before MVP approval. |
+
 ## Open Management Watchpoints
 
 | Watchpoint | Risk | Proposed Owner |
@@ -55,6 +65,6 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Research claims may be invented. | PRD/MVP may encode unsupported competitor or repository facts. | PM Agent in Research Mode |
 | Reuse may be recommended without license evidence. | Downstream architecture may adopt unsafe or incompatible dependencies. | PM Agent in Research Mode and Architect Agent |
 
-## Proposed Round 3 Focus
+## Proposed Next Round
 
-Round 3 should dogfood the research-first workflow with a new Bilibili video analysis channel example. The example should start with `research/`, feed findings into product discovery, and avoid creating product code until a later approved task. After that dogfood pass, simplify repeated handoff and validation blocks, decide whether to add `INTERFACE_SPEC.md`, add a reusable no-runtime checklist, and normalize status vocabulary across task/artifact/state layers.
+The next planned round should dogfood the research-first workflow with a new Bilibili video analysis channel example at `examples/bilibili-video-analysis-channel/`. The example should start with `research/`, feed findings into product discovery, and avoid creating product code until a later approved task. After that dogfood pass, simplify repeated handoff and validation blocks, decide whether to add `INTERFACE_SPEC.md`, add a reusable no-runtime checklist, and normalize status vocabulary across task/artifact/state layers.

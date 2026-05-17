@@ -51,6 +51,9 @@ Allowed artifact paths:
 
 - `docs/vision/`
 - `docs/product/`
+- `docs/agents/PM_AGENT.md`
+- `docs/workflows/reference_research.md`
+- `templates/project/research/`
 - `templates/project/product/`
 - Legacy compatibility files: `templates/project/PRD.md`, `templates/project/MVP.md`, `templates/project/ROADMAP.md`
 
@@ -59,6 +62,9 @@ Forbidden actions:
 - Editing source code, tests, or runtime configuration.
 - Adding architecture decisions without Architect Agent review.
 - Moving work into execution without approved MVP scope.
+- Approving PRD/MVP templates without research or waiver when references are required.
+- Copying proprietary content, branding, private workflows, protected assets, or closed-source implementation details.
+- Recommending open-source reuse without license or restriction evidence.
 
 Required inputs:
 
@@ -71,11 +77,20 @@ Required outputs:
 - Updated PRD, MVP, roadmap, problem statement, non-goals, or success criteria.
 - Explicit open questions and assumptions.
 - Acceptance criteria suitable for architecture and planning.
+- Research templates, feature matrix, gap analysis, and reuse decisions when operating in Research Mode.
 
 Handoff requirements:
 
 - Hand off to Architect Agent with source product artifacts, approved scope, non-goals, and unresolved product questions.
 - Hand off to Lead Agent only after MVP scope and success criteria are coherent enough to plan.
+
+PM Research Mode:
+
+- Use Research Mode when external repositories, products, creators, papers, screenshots, or reuse decisions may affect repository templates or product-scope guidance.
+- Allowed paths in this repository: `templates/project/research/`, `docs/workflows/reference_research.md`, `docs/agents/PM_AGENT.md`, and `templates/project/product/`.
+- Required inputs: product idea, reference links or search scope, target users, known constraints, and any human-provided evidence.
+- Required outputs: source log, open-source scan when relevant, reference-product analysis when relevant, feature matrix, gap analysis, and reuse decisions.
+- Stop when sources are inaccessible without human notes, feature claims are unsourced, or open-source reuse is considered before license and restriction evidence is recorded.
 
 ### Architect Agent
 

@@ -10,17 +10,19 @@ Template rule: gaps must compare sourced reference evidence against the proposed
 | Upstream Sources | `research/FEATURE_MATRIX.md`, `research/OPEN_SOURCE_SCAN.md`, `research/REFERENCE_PRODUCT_ANALYSIS.md` |
 | Downstream Consumers | `research/REUSE_DECISIONS.md`, `product/PRD.md`, `product/MVP.md`, `architecture/SYSTEM_DESIGN.md` |
 
+Evidence confidence values: `high`, `medium`, `low`, `unknown`.
+
 ## Reference Gaps
 
-| Gap ID | What References Have That We Lack | Source Evidence | User Impact | MVP Implication | Decision |
-| --- | --- | --- | --- | --- | --- |
-| GAP-001 | <capability, workflow, constraint, or quality bar> | <FEAT/SRC/OSS/REF ID> | <impact if ignored> | <include / defer / reject / research more> | <what to do> |
+| Gap ID | What References Have That We Lack | Source Evidence | Evidence Confidence | User Impact | MVP Implication | Decision |
+| --- | --- | --- | --- | --- | --- | --- |
+| GAP-001 | <capability, workflow, constraint, or quality bar> | <FEAT/SRC/OSS/REF ID> | <high / medium / low / unknown> | <impact if ignored> | <include / defer / reject / research more> | <what to do> |
 
 ## What We Should Learn
 
-| Learning ID | Source | Lesson | How It Should Influence Product Discovery |
-| --- | --- | --- | --- |
-| LEARN-001 | <source ID> | <specific lesson> | <PRD/MVP/user story impact> |
+| Learning ID | Source | Evidence Confidence | Lesson | How It Should Influence Product Discovery |
+| --- | --- | --- | --- | --- |
+| LEARN-001 | <source ID> | <high / medium / low / unknown> | <specific lesson> | <PRD/MVP/user story impact> |
 
 ## What We Should Not Copy
 
@@ -45,3 +47,7 @@ Template rule: gaps must compare sourced reference evidence against the proposed
 | Implication | Required Now? | Rationale | Affected Artifact |
 | --- | --- | --- | --- |
 | <interface, data, integration, privacy, or extensibility implication> | Yes/No/Research more | <why> | `architecture/SYSTEM_DESIGN.md` |
+
+## Confidence Rule
+
+Low or unknown confidence cannot directly authorize MVP scope. Route it to an explicit PRD assumption, a follow-up validation item, or a `research more` decision before product approval.
