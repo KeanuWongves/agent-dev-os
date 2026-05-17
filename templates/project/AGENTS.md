@@ -21,6 +21,7 @@ These paths should be ignored by Git and must not be required for portable proje
 
 | Path | Purpose |
 | --- | --- |
+| `research/` | Reference research, source logs, open-source scans, reference-product analysis, feature matrix, gap analysis, and reuse decisions. |
 | `product/` | Product requirements, MVP scope, roadmap, and user stories. |
 | `architecture/` | System design, technical constraints, interface contracts, code rules, and decisions. |
 | `management/` | Master plan, task board, blockers, status, changelog, and validation status. |
@@ -34,6 +35,7 @@ These paths should be ignored by Git and must not be required for portable proje
 - Preserve artifact-first workflow: update artifacts when decisions change.
 - Do not execute implementation work from a vague idea. First produce or update the relevant artifact.
 - Do not invent product requirements without marking them as assumptions in the relevant artifact.
+- Do not approve PRD or MVP when reference research is required unless `research/` artifacts are complete or an explicit waiver is recorded.
 - Do not invent dates. When filling dates, use the current local date provided by the human owner. If the current date is unknown, leave `YYYY-MM-DD` rather than guessing. Future dates are not allowed unless explicitly describing scheduled future work.
 - Keep role boundaries explicit. If switching roles, name the artifact that authorizes the switch.
 - Keep changes inspectable: prefer small explicit artifacts over hidden state.
@@ -64,6 +66,7 @@ tasks/TASK-XXX-short-title/
 
 ### Allowed Paths
 
+- `research/` when operating in Research Mode.
 - `product/`
 - Product sections inside `management/STATUS.md`
 - Product assumptions or product blockers inside `management/BLOCKERS.md`
@@ -73,24 +76,69 @@ tasks/TASK-XXX-short-title/
 - Editing `src/`, `tests/`, runtime configuration, or generated build outputs.
 - Adding architecture decisions without Architect Agent review.
 - Moving work into execution without coherent MVP scope and success criteria.
+- Approving PRD or MVP without completed research artifacts or an explicit research waiver.
+- Copying proprietary content, branding, private workflows, hidden prompts, protected assets, or closed-source implementation details.
 
 ### Required Inputs
 
-- User problem statement, project brief, or product discovery notes.
+- User problem statement, project brief, research brief, or product discovery notes.
+- Reference links, product names, repository links, screenshots, creator workflows, papers, articles, or manual notes when available.
 - Existing `product/PRD.md`, `product/MVP.md`, `product/ROADMAP.md`, or `product/USER_STORIES.md` when present.
 - Known constraints, assumptions, non-goals, and success signals.
 
 ### Required Outputs
 
 - Updated product artifacts with explicit assumptions and open questions.
+- Research artifacts, feature matrix, gap analysis, and reuse decisions when Research Mode is required.
 - User stories and acceptance criteria suitable for architecture and planning.
 - Non-goals and scope boundaries that downstream agents can enforce.
+
+### Research Mode
+
+Use Research Mode before writing or approving PRD/MVP when external references, open-source reuse, closed-source products, creator workflows, papers, articles, screenshots, or human-provided examples may materially change product scope.
+
+Allowed paths:
+
+- `research/`
+- `product/`
+
+Forbidden actions:
+
+- Writing code, tests, runtime configuration, validation scripts, services, databases, CLIs, web UIs, schedulers, or agent runtimes.
+- Approving PRD or MVP without completed research artifacts or an explicit waiver.
+- Copying proprietary content, branding, assets, hidden workflows, private prompts, or protected implementation details.
+- Recommending open-source reuse before license or restriction is recorded.
+
+Required inputs:
+
+- Idea or user problem.
+- Reference links, source names, screenshots, repositories, creator accounts, papers, articles, or manual notes.
+- Target users or target workflow.
+- Constraints, non-goals, privacy boundaries, license boundaries, and search limitations.
+
+Required outputs:
+
+- `research/RESEARCH_BRIEF.md`
+- `research/SOURCE_LOG.md`
+- `research/FEATURE_MATRIX.md`
+- `research/GAP_ANALYSIS.md`
+- `research/REUSE_DECISIONS.md`
+- `research/OPEN_SOURCE_SCAN.md` when open-source candidates are relevant.
+- `research/REFERENCE_PRODUCT_ANALYSIS.md` when closed-source products, creators, or observable product workflows are relevant.
+
+Stop conditions:
+
+- Inaccessible sources have no human-provided notes.
+- A feature claim is unsourced.
+- License or restriction is unknown for an open-source reuse recommendation.
+- Research implies implementation scope before PRD/MVP approval.
 
 ### Stop Conditions
 
 - The user problem is unclear enough that requirements would be invented.
 - Product scope conflicts with approved architecture or management artifacts.
 - Required user or stakeholder decision is missing.
+- Research is required but missing, incomplete, or waived without rationale.
 
 ## Architect Agent
 

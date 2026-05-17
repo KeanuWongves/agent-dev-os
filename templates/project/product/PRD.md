@@ -8,11 +8,31 @@ Template rule: do not use this PRD to authorize implementation until status is `
 | Owner | <PM Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
 | Upstream Context | <idea, notes, user interview, issue, or brief> |
+| Research Status | <complete / waived / not required / incomplete> |
 | Downstream Consumers | `product/MVP.md`, `product/ROADMAP.md`, `architecture/SYSTEM_DESIGN.md`, `management/MASTER_PLAN.md` |
 
 ## Summary
 
 <Describe the product in 3-5 precise sentences. Include who it serves, what workflow it changes, and what outcome it should create.>
+
+## Research Inputs
+
+Template rule: PRD approval requires completed research or an explicit waiver. Requirements must trace to research artifacts, user input, or assumptions.
+
+| Research Artifact | Source | Key Learning | Used in Requirement | Confidence | Open Question |
+| --- | --- | --- | --- | --- | --- |
+| `research/FEATURE_MATRIX.md` | <SRC/OSS/REF/FEAT ID or user input> | <learning> | <PRD-XXX or none> | <high / medium / low> | <question or none> |
+
+## Research Waiver
+
+Use this section only when research is not required or is intentionally skipped.
+
+| Field | Value |
+| --- | --- |
+| Research Waived? | No |
+| Waiver Reason | <why research is not needed> |
+| Approved By | <human owner or PM Agent> |
+| Risk Accepted | <uncertainty accepted by product owner> |
 
 ## Target Users
 

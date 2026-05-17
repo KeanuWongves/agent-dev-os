@@ -8,6 +8,7 @@ Agents should move work through explicit artifacts:
 
 | From Role | Artifact Produced | Next Role |
 | --- | --- | --- |
+| PM Agent in Research Mode | research brief, source log, feature matrix, gap analysis, reuse decisions | PM Agent |
 | PM Agent | PRD, MVP, roadmap | Architect Agent |
 | Architect Agent | system design | Lead Agent |
 | Lead Agent | master plan, task board | Task Manager Agent |

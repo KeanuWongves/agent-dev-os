@@ -6,10 +6,12 @@ This log records repository-level dogfood and template evolution rounds. It is a
 
 | Round | Result | Summary | Evidence |
 | --- | --- | --- | --- |
-| Round 0 | Completed | Bootstrapped the artifact-driven development OS with root operating rules, vision docs, initial workflow docs, flat project templates, transitional task templates, Codex prompts, and minimal package/test placeholders. | Git commit `e0dcb50`; root `AGENTS.md`; `docs/vision/`; `templates/project/`; `templates/task/` |
-| Round 0.1 | Completed | Tightened the root operating model, expanded role boundaries, corrected package naming, and refined README, workflow, template, and prompt wording from the initial baseline. | Git commit `48c6292`; root `AGENTS.md`; `README.md`; template diffs |
-| Round 1 | Completed | Normalized the project template set with project-local `AGENTS.md`, nested product/architecture/management/state artifacts, dedicated role docs, workflow docs, and canonical folder-per-task templates. | Git commit `82fd736`; `templates/project/`; `templates/task/task.md`; `docs/agents/`; `docs/workflows/` |
-| Round 2 | PASS WITH MINOR FIXES | Created the Weekly Report Assistant example project to stress-test the artifact chain from vague product idea to structured product, architecture, management, state, and one Ready task folder. | Git commit `b6c3d47`; `examples/weekly-report-assistant/`; `examples/weekly-report-assistant/NOTES.md` |
+| Round 0 | Completed | Bootstrapped the artifact-driven development OS with root operating rules, vision docs, initial workflow docs, flat project templates, transitional task templates, Codex prompts, and minimal package/test placeholders. | Git commit `eaee267`; root `AGENTS.md`; `docs/vision/`; `templates/project/`; `templates/task/` |
+| Round 0.1 | Completed | Tightened the root operating model, expanded role boundaries, corrected package naming, and refined README, workflow, template, and prompt wording from the initial baseline. | Git commit `391b3a6`; root `AGENTS.md`; `README.md`; template diffs |
+| Round 1 | Completed | Normalized the project template set with project-local `AGENTS.md`, nested product/architecture/management/state artifacts, dedicated role docs, workflow docs, and canonical folder-per-task templates. | Git commit `00fb5dd`; `templates/project/`; `templates/task/task.md`; `docs/agents/`; `docs/workflows/` |
+| Round 2 | PASS WITH MINOR FIXES | Created the Weekly Report Assistant example project to stress-test the artifact chain from vague product idea to structured product, architecture, management, state, and one Ready task folder. | Git commit `b3faa8b`; `examples/weekly-report-assistant/`; `examples/weekly-report-assistant/NOTES.md` |
+| Round 2.1 | Completed | Converted Round 2 review findings into artifact-only task support, pre-execution status conventions, interface naming guidance, dogfood notes template, and management status artifacts. | Git commit `568c6c4`; `templates/task/`; `templates/project/DOGFOOD_NOTES.md`; `docs/management/` |
+| Round 2.2 | Completed | Added a research-first layer before product discovery, including reference research templates, PM Research Mode, source traceability rules, product discovery gates, PRD research inputs, and management status updates. | `templates/project/research/`; `docs/workflows/reference_research.md`; `docs/agents/PM_AGENT.md`; `templates/project/product/PRD.md` |
 
 ## Round 2 Findings
 
@@ -55,6 +57,20 @@ This log records repository-level dogfood and template evolution rounds. It is a
 
 Round 2.1 converts Round 2 findings into repository templates and management docs. Date replacement in the Weekly Report Assistant example is intentionally skipped per human instruction.
 
+## Round 2.2 Scope
+
+Round 2.2 adds explicit reference research before product discovery. PM Agent in Research Mode now owns research artifacts that log sources, scan open-source repositories, analyze closed-source or creator workflows, compare features, identify gaps, and record build/reuse/learn/ignore decisions before PRD or MVP approval.
+
+## Round 2.2 Findings
+
+| Finding | Response |
+| --- | --- |
+| The previous workflow moved too quickly from idea to PRD/MVP. | Added `docs/workflows/reference_research.md` and research templates under `templates/project/research/`. |
+| PRD requirements needed clearer traceability to evidence. | Added `Research Inputs` and waiver sections to `templates/project/product/PRD.md`. |
+| PM Agent needed a mode for research without implementation authority. | Added PM Research Mode to `docs/agents/PM_AGENT.md` and `templates/project/AGENTS.md`. |
+| Open-source reuse needed license gating. | Added source log, open-source scan, and reuse decision templates with license and restriction stop conditions. |
+| Closed-source product analysis needed copy boundaries. | Added reference-product analysis rules that allow learning from observable patterns but forbid copying proprietary content. |
+
 ## Proposed Round 3 Focus
 
 | Focus | Rationale | Candidate Artifacts |
@@ -62,5 +78,5 @@ Round 2.1 converts Round 2 findings into repository templates and management doc
 | Reduce task-template duplication | Handoff, validation, and stop-condition blocks repeat across task artifacts. | `templates/task/` |
 | Split or supplement API naming | Artifact-only workflows need interface contracts without runtime/API implication. | `templates/project/architecture/API_SPEC.md`, future `INTERFACE_SPEC.md` |
 | Add a no-runtime checklist template | Runtime-surface prohibitions are common and should be reusable. | `templates/task/task.md`, `templates/project/architecture/CODE_RULES.md` |
-| Dogfood another project type | Weekly-report assistant tested artifact-only work; another example should test a small code-authorized task. | `examples/` |
+| Dogfood research-first workflow | Weekly-report assistant tested artifact-only work; the next active dogfood example should be a new Bilibili video analysis channel example that starts with reference research. | `examples/` |
 | Normalize status vocabulary | Artifact approval, task board state, validation state, and pre-execution placeholders should be easier to distinguish. | `AGENTS.md`, `templates/task/`, `templates/project/state/` |

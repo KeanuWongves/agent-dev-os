@@ -4,15 +4,17 @@ This directory describes repeatable artifact workflows.
 
 ## Initial Workflow
 
-1. Capture the idea in a project brief or PRD.
-2. Define MVP scope and non-goals.
-3. Produce a system design only for approved MVP scope.
-4. Convert the design into a master plan.
-5. Break the plan into folder-per-task artifacts.
-6. Give one task folder to a Code Agent.
-7. Review output against the task artifacts.
-8. Record validation evidence.
-9. Update upstream artifacts if implementation reveals a product or architecture mismatch.
+1. Capture the idea in a project brief or research brief.
+2. Run reference research when external references, repositories, products, creators, papers, screenshots, or reuse decisions may influence scope.
+3. Feed research findings into product discovery.
+4. Define PRD, MVP scope, and non-goals.
+5. Produce a system design only for approved MVP scope.
+6. Convert the design into a master plan.
+7. Break the plan into folder-per-task artifacts.
+8. Give one task folder to a Code Agent.
+9. Review output against the task artifacts.
+10. Record validation evidence.
+11. Update upstream artifacts if implementation reveals a product or architecture mismatch.
 
 ## Workflow Rule
 
@@ -35,6 +37,7 @@ Canonical templates now exist for this model. `TASK_CONTRACT.md` maps to `task.m
 
 ## Detailed Workflows
 
+- `reference_research.md`
 - `product_discovery.md`
 - `architecture_planning.md`
 - `task_planning.md`
