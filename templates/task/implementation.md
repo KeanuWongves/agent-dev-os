@@ -4,6 +4,8 @@ Copy this file to `tasks/TASK-XXX-short-title/implementation.md`. Code Agents up
 
 Template rule: record evidence as work happens. Do not mark acceptance criteria complete without matching validation evidence in `test.md`.
 
+Pre-execution rule: a `Ready` task may have a Draft `implementation.md` as long as this file is structurally prepared and does not claim implementation, validation, review, or completion.
+
 ## Metadata
 
 | Field | Value |
@@ -17,6 +19,17 @@ Template rule: record evidence as work happens. Do not mark acceptance criteria 
 | Test Artifact | `tasks/TASK-XXX-short-title/test.md` |
 | Last Updated | YYYY-MM-DD |
 | Implemented By | <agent or human> |
+
+## Pre-execution Status Convention
+
+Use these values consistently before execution:
+
+- `Pending`: expected evidence or action has not happened yet.
+- `Not Run`: a command, check, validation item, or review item has not been performed.
+- `Not Started`: implementation work or acceptance-criteria progress has not begun.
+- `Blocked`: progress cannot continue because a required artifact, decision, environment, or prior result is missing.
+
+Before execution, keep implementation summary, scope confirmation, files changed, execution log, and acceptance-criteria status in `Pending`, `Not Run`, or `Not Started` states. Do not use `Met`, `Complete`, `Approved`, or `Validated` until evidence exists in `test.md`.
 
 ## Implementation Summary
 

@@ -34,6 +34,7 @@ These paths should be ignored by Git and must not be required for portable proje
 - Preserve artifact-first workflow: update artifacts when decisions change.
 - Do not execute implementation work from a vague idea. First produce or update the relevant artifact.
 - Do not invent product requirements without marking them as assumptions in the relevant artifact.
+- Do not invent dates. When filling dates, use the current local date provided by the human owner. If the current date is unknown, leave `YYYY-MM-DD` rather than guessing. Future dates are not allowed unless explicitly describing scheduled future work.
 - Keep role boundaries explicit. If switching roles, name the artifact that authorizes the switch.
 - Keep changes inspectable: prefer small explicit artifacts over hidden state.
 - Do not introduce a CLI, dependency, database, web UI, agent runtime, service, scheduler, or validation code unless an approved task explicitly authorizes it.

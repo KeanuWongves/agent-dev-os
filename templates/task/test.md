@@ -17,6 +17,18 @@ Template rule: validation evidence must be exact enough for another agent to rer
 | Implementation Artifact | `tasks/TASK-XXX-short-title/implementation.md` |
 | Last Updated | YYYY-MM-DD |
 | Validated By | <agent, QA Agent, or human> |
+| Artifact-only task? | <Yes/No> |
+
+## Pre-execution Status Convention
+
+A task may be `Ready` while `implementation.md`, `test.md`, and `review.md` are still `Draft`, as long as those artifacts are structurally prepared and do not claim completion.
+
+Use these values consistently before execution:
+
+- `Pending`: expected evidence or action has not happened yet.
+- `Not Run`: a command, check, validation item, or review item has not been performed.
+- `Not Started`: implementation work or acceptance-criteria progress has not begun.
+- `Blocked`: progress cannot continue because a required artifact, decision, environment, or prior result is missing.
 
 ## TDD Status
 
@@ -26,6 +38,28 @@ Template rule: validation evidence must be exact enough for another agent to rer
 | Tests Written or Updated Before Implementation | <Yes/No> |
 | First Test Change Timestamp | <YYYY-MM-DD HH:MM or N/A - reason> |
 | Implementation Started After Test Evidence | <Yes/No/N/A - reason> |
+
+For artifact-only tasks, TDD may be marked not applicable only when source code and test code are not authorized. In that case, record the alternative validation method before implementation starts.
+
+## Artifact-only Validation Modes
+
+Use this section when `Artifact-only task?` is `Yes`. If the task is not artifact-only, write `N/A - task changes source or test code with explicit authorization`.
+
+Acceptable alternative validation examples:
+
+- Manual artifact inspection against acceptance criteria.
+- File existence check for required artifacts.
+- Changed-file scope check against `task.md`.
+- No-code/dependency scan confirming no source code, test code, runtime code, validation scripts, dependency manifests, CLIs, services, databases, schedulers, web UIs, or agent runtimes were added.
+
+| Mode | Required? | Acceptance Criteria | Evidence Location |
+| --- | --- | --- | --- |
+| Manual artifact inspection | <Yes/No/N/A> | <AC IDs or N/A> | <VAL ID or N/A> |
+| File existence check | <Yes/No/N/A> | <AC IDs or N/A> | <VAL ID or N/A> |
+| Changed-file scope check | <Yes/No/N/A> | <AC IDs or N/A> | <VAL ID or N/A> |
+| No-code/dependency scan | <Yes/No/N/A> | <AC IDs or N/A> | <VAL ID or N/A> |
+
+Artifact-only tasks must not create source code, test code, runtime code, or validation scripts unless explicitly authorized in `task.md`.
 
 ## Tests Written Before Implementation
 

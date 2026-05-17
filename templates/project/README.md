@@ -9,7 +9,7 @@ Recommended order:
 3. Fill `product/MVP.md`.
 4. Fill `product/ROADMAP.md` and `product/USER_STORIES.md` as needed.
 5. Fill `architecture/SYSTEM_DESIGN.md` for approved MVP scope.
-6. Fill architecture support artifacts when they constrain execution: `TECH_STACK.md`, `API_SPEC.md`, `CODE_RULES.md`, and `DECISIONS.md`.
+6. Fill architecture support artifacts when they constrain execution: `TECH_STACK.md`, `API_SPEC.md`, `CODE_RULES.md`, and `DECISIONS.md`. For artifact-only projects, `API_SPEC.md` may describe file or artifact interface contracts; its existence does not authorize a network API, service, CLI, or runtime.
 7. Fill `management/MASTER_PLAN.md`.
 8. Create tasks in `management/TASK_BOARD.md`.
 9. Generate one task folder under `tasks/TASK-XXX-short-title/`.
@@ -29,3 +29,5 @@ Each artifact should name upstream sources and downstream consumers so future ag
 Task templates are normalized so each task has `task.md`, `plan.md`, `implementation.md`, `test.md`, and `review.md`.
 
 Legacy flat files such as `PRD.md`, `SYSTEM_DESIGN.md`, `TASK_BOARD.md`, and `VALIDATION_STATUS.md` remain for backward compatibility. New generated projects should use the nested files.
+
+Use `DOGFOOD_NOTES.md` when creating example projects or running template dogfood rounds. It captures template friction, repeated fields, missing patterns, and candidate improvements for the next round.

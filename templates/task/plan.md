@@ -16,6 +16,7 @@ Template rule: every implementation step must trace to an acceptance criterion i
 | Last Updated | YYYY-MM-DD |
 | Prepared By | <Task Manager Agent or human owner> |
 | Execution Owner | <Code Agent, human owner, or unassigned> |
+| Artifact-only task? | <Yes/No> |
 
 ## Files to Inspect
 
@@ -34,6 +35,15 @@ Template rule: every implementation step must trace to an acceptance criterion i
 ## Execution Strategy
 
 <describe the smallest coherent approach that satisfies the acceptance criteria without expanding scope.>
+
+## Artifact-only Execution Guidance
+
+Use this section when `Artifact-only task?` is `Yes`. If the task is not artifact-only, write `N/A - task changes source or test code with explicit authorization`.
+
+- Artifact-only tasks must not create source code, test code, runtime code, validation scripts, dependency manifests, CLIs, services, databases, schedulers, web UIs, or agent runtimes unless `task.md` explicitly authorizes the exact paths.
+- Acceptable alternative validation examples are manual artifact inspection, file existence check, changed-file scope check, and no-code/dependency scan.
+- The plan must name which alternative validation modes are required before implementation starts and which are required before review.
+- Validation evidence must be recorded in `test.md`; the plan itself is not validation evidence.
 
 ## Step-by-step Plan
 
@@ -55,6 +65,8 @@ Template rule: every implementation step must trace to an acceptance criterion i
 | Implementation May Start After | <test exists, failing signal captured, or alternative validation recorded> |
 | Alternative Validation If TDD Is Not Applicable | <manual/static/artifact validation method or N/A> |
 | Artifact Where Decision Is Recorded | `tasks/TASK-XXX-short-title/test.md` |
+
+For artifact-only tasks, use the TDD plan to record that executable tests are not applicable only when source/test code is not authorized. The alternative validation must include one or more allowed modes such as manual artifact inspection, file existence check, changed-file scope check, or no-code/dependency scan.
 
 ## Required Commands
 
@@ -89,6 +101,7 @@ If no command is applicable, replace the block with `N/A - <reason>` and define 
 - `task.md` and `plan.md` disagree on allowed scope, acceptance criteria, required tests, or validation.
 - The required change needs files outside the allowed scope.
 - The work requires a new dependency, CLI, database, web UI, service, scheduler, agent runtime, or validation code not explicitly authorized by `task.md`.
+- An artifact-only task would create source code, test code, runtime code, validation scripts, dependency manifests, CLIs, services, databases, schedulers, web UIs, or agent runtimes not explicitly authorized by `task.md`.
 - TDD is skipped without a recorded reason and alternative validation in `test.md`.
 - Validation cannot be run and no alternative evidence is approved in `task.md`.
 

@@ -4,6 +4,8 @@ Copy this file to `tasks/TASK-XXX-short-title/review.md`. Review Agents update t
 
 Template rule: review the implementation against the original task artifacts. Do not rewrite acceptance criteria to fit the implementation. Review Agents must not implement fixes while acting as reviewer.
 
+Pre-execution rule: a `Ready` task may have a Draft `review.md` as long as this file is structurally prepared and clearly says review is `Not Run` or `Not Started`. Do not use `Approved`, `Changes Requested`, or evidence-based findings before implementation evidence exists.
+
 ## Metadata
 
 | Field | Value |
@@ -19,6 +21,17 @@ Template rule: review the implementation against the original task artifacts. Do
 | Last Updated | YYYY-MM-DD |
 | Reviewed By | <agent or human> |
 | Diff or Revision Reviewed | <git diff, commit, branch, or artifact snapshot> |
+
+## Pre-execution Status Convention
+
+Use these values consistently before review:
+
+- `Pending`: expected evidence or action has not happened yet.
+- `Not Run`: a command, check, validation item, or review item has not been performed.
+- `Not Started`: review work has not begun.
+- `Blocked`: review cannot continue because implementation notes, diff, test evidence, or source artifacts are missing.
+
+Before implementation evidence exists, scope compliance, acceptance-criteria compliance, test evidence review, architecture compliance, and scope check rows should use `Not Run`, `Not Started`, or `Blocked` rather than pass/fail judgments.
 
 ## Review Verdict
 

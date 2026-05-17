@@ -2,6 +2,8 @@
 
 Template rule: interfaces must be explicit enough for implementation and review agents to detect contract drift.
 
+Interface naming guidance: for runtime projects, this file may describe API contracts such as HTTP routes, functions, events, CLIs, or internal service boundaries. For artifact-only projects, this file may describe file or artifact interface contracts such as Markdown structures, YAML schemas, prompt inputs, or handoff artifacts. Do not infer a network API, service, CLI, MCP server, agent runtime, or other runtime surface from the existence of `API_SPEC.md`. A future template set may add `INTERFACE_SPEC.md`, but do not rename this file without an approved template migration.
+
 | Field | Value |
 | --- | --- |
 | Status | Draft |
@@ -15,6 +17,8 @@ Template rule: interfaces must be explicit enough for implementation and review 
 | Interface ID | Name | Type | Producer | Consumer | Status |
 | --- | --- | --- | --- | --- | --- |
 | API-001 | <name> | <HTTP/function/event/file/CLI/internal> | <component> | <component> | Draft |
+
+Use `file/artifact` as the Type for artifact-only contracts. The interface ID may still use `API-###` in this template; the ID does not authorize runtime implementation.
 
 ## Contract Details
 
@@ -50,3 +54,4 @@ Template rule: interfaces must be explicit enough for implementation and review 
 - Breaking interface changes require an architecture decision before implementation.
 - Review Agents must compare changed interfaces against this spec.
 - QA Agents must validate at least one success path and one relevant failure path for MVP-critical interfaces.
+- Artifact-only interface specs must stay within artifact scope unless `product/`, `architecture/`, and the task contract explicitly authorize runtime work.

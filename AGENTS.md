@@ -23,6 +23,7 @@ These paths are ignored by Git and must not be required for portable repository 
 - Keep changes inspectable: prefer small, explicit files over hidden state or generated noise.
 - Do not introduce a CLI, dependency, database, web UI, agent runtime, or validation code unless an approved task explicitly authorizes it.
 - Do not invent product requirements without marking them as assumptions in the relevant artifact.
+- Do not invent dates. When filling dates, use the current local date provided by the human owner. If the current date is unknown, leave `YYYY-MM-DD` rather than guessing. Future dates are not allowed unless explicitly describing scheduled future work.
 - Do not execute implementation work from a vague idea. First produce or update the relevant artifact.
 - Keep role boundaries explicit. If switching roles, state which artifact authorizes the switch.
 - For task execution, use the folder-per-task direction described in this file even while legacy templates still exist.

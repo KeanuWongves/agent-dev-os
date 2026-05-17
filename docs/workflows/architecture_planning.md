@@ -20,7 +20,7 @@ Architect Agent.
 2. Identify system boundaries, non-goals, and external dependencies.
 3. Define components with responsibilities, inputs, outputs, and owners.
 4. Define data model, state, persistence, and failure behavior.
-5. Specify interfaces in `API_SPEC.md` when component or external contracts matter.
+5. Specify interfaces in `API_SPEC.md` when component, file/artifact, or external contracts matter. Do not infer a network API, service, CLI, MCP server, agent runtime, or runtime implementation from the existence of `API_SPEC.md`.
 6. Record approved technology choices and dependency policy in `TECH_STACK.md`.
 7. Record enforceable implementation constraints in `CODE_RULES.md`.
 8. Capture meaningful tradeoffs in `DECISIONS.md`.
@@ -39,11 +39,13 @@ Architect Agent.
 - Interfaces must be specific enough for review.
 - New dependencies require an explicit decision and downstream task authorization.
 - Implementation guardrails must be enforceable by review or validation.
+- Artifact-only interface specs may describe file or artifact contracts and must not expand scope into runtime work.
 
 ## Common Failure Modes
 
 - Expanding product scope through architecture.
 - Leaving interface contracts implicit.
+- Treating `API_SPEC.md` as permission to create a network API, service, CLI, MCP server, or runtime.
 - Recording preferences instead of decisions.
 - Approving technology without consequences and validation implications.
 

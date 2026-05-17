@@ -19,6 +19,7 @@ Template rule: every placeholder must be replaced before the task can move to `R
 | Status | Draft |
 | Last Updated | YYYY-MM-DD |
 | Readiness Decision | <Draft/Ready/Blocked> |
+| Artifact-only task? | <Yes/No> |
 
 ## Owner
 
@@ -59,11 +60,27 @@ Produce exactly one observable outcome:
 | Configuration | <exact config files, or N/A - reason> | <what may change> |
 | External effects | <network, filesystem, generated assets, or N/A - reason> | <approved limits> |
 
+## Artifact-only Task Rules
+
+Use this section when `Artifact-only task?` is `Yes`. If the task is not artifact-only, write `N/A - task changes source or test code with explicit authorization`.
+
+| Field | Value |
+| --- | --- |
+| Artifact-only deliverable | <exact artifact path or N/A - not artifact-only> |
+| Source code allowed? | <No unless explicitly authorized, or Yes with exact paths and source artifact> |
+| Test code allowed? | <No unless explicitly authorized, or Yes with exact paths and source artifact> |
+| Runtime or service code allowed? | <No unless explicitly authorized, or Yes with exact paths and source artifact> |
+| Validation scripts allowed? | <No unless explicitly authorized, or Yes with exact paths and source artifact> |
+| Allowed validation modes | <manual artifact inspection, file existence check, changed-file scope check, no-code/dependency scan, or task-specific approved mode> |
+
+Artifact-only tasks must not create source code, test code, runtime code, or validation scripts unless this task contract explicitly authorizes the exact paths and source artifact for that exception.
+
 ## Forbidden Changes
 
 - Do not change files outside the allowed paths above.
 - Do not change product scope, architecture constraints, or acceptance criteria.
 - Do not add a dependency, CLI, database, web UI, service, scheduler, agent runtime, or validation code unless this task explicitly names it in Allowed Changes.
+- For artifact-only tasks, do not create source code, test code, runtime code, or validation scripts unless this task explicitly authorizes the exact paths.
 - Do not mark the task complete without validation evidence in `test.md`.
 - Do not use chat-only decisions as source material unless they are written back into a repository artifact first.
 
@@ -106,6 +123,15 @@ Produce exactly one observable outcome:
 | --- | --- | --- | --- | --- |
 | T-001 | <unit/integration/static/artifact/manual> | <Yes/No> | <AC IDs> | <exact test expectation or N/A - reason> |
 
+For artifact-only tasks, acceptable alternative validation examples include:
+
+- Manual artifact inspection against the task acceptance criteria.
+- File existence check for required artifacts.
+- Changed-file scope check against Allowed Changes and Expected Edit Surface.
+- No-code/dependency scan confirming the task did not add source code, test code, runtime code, validation scripts, dependency manifests, CLIs, services, databases, schedulers, web UIs, or agent runtimes.
+
+Artifact-only validation must still be exact enough for another agent to rerun or inspect. Do not use confidence-only wording.
+
 ## Required Commands
 
 ```bash
@@ -139,6 +165,7 @@ If no command is applicable, replace the block with `N/A - <reason>` and define 
 - Allowed Changes, acceptance criteria, required tests, or required commands conflict with each other.
 - The task requires changing files outside Expected Edit Surface or Allowed Changes.
 - The task requires a new dependency, CLI, database, web UI, service, scheduler, agent runtime, or validation code not explicitly authorized above.
+- An artifact-only task creates source code, test code, runtime code, or validation scripts without explicit authorization above.
 - TDD is skipped without a recorded reason and alternative validation method in `test.md`.
 - Validation cannot be run and no alternative evidence is approved in this task contract.
 
