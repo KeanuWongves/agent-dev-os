@@ -33,7 +33,7 @@ Template rule: every placeholder must be replaced before the task can move to `R
 | Next Human Decision Needed | <decision or N/A> |
 | Gate Not Required Rationale | <why Gate 4 is not required for a low-risk task, or N/A> |
 
-Task rule: use Gate 4 when the task is non-trivial or high-risk. Low-risk tasks may use `none`, but must record a not-required rationale. Code Agent must stop if `Required Human Gate` is Gate 4 or Gate 5 and `Approval Status` is not `approved`, `waived`, or `not required`.
+Task rule: use Gate 4 when the task is non-trivial or high-risk. If `Required Human Gate` is Gate 4 or Gate 5, `Approval Status` must be `approved`, `approved with limitations`, or `waived` before execution. Low-risk tasks may use `Required Human Gate` = `none` only when `Approval Status` is `not required` and `Gate Not Required Rationale` is filled.
 
 ## Owner
 
@@ -180,15 +180,16 @@ If no command is applicable, replace the block with `N/A - <reason>` and define 
 - The task requires changing files outside Expected Edit Surface or Allowed Changes.
 - The task requires a new dependency, CLI, database, web UI, service, scheduler, agent runtime, or validation code not explicitly authorized above.
 - An artifact-only task creates source code, test code, runtime code, or validation scripts without explicit authorization above.
-- Required Human Gate is Gate 4 or Gate 5 and Approval Status is not `approved`, `waived`, or explicitly `not required`.
+- Required Human Gate is Gate 4 or Gate 5 and Approval Status is not `approved`, `approved with limitations`, or `waived`.
+- Required Human Gate is `none`, but Approval Status is not `not required` or Gate Not Required Rationale is empty.
 - TDD is skipped without a recorded reason and alternative validation method in `test.md`.
 - Validation cannot be run and no alternative evidence is approved in this task contract.
 
 ## Readiness Checklist
 
 - [ ] Human approval status is recorded.
-- [ ] Gate 4 approval or waiver exists for non-trivial or high-risk tasks.
-- [ ] Low-risk tasks that skip Gate 4 record a not-required rationale.
+- [ ] Gate 4 approval, approval with limitations, or waiver exists for non-trivial or high-risk tasks.
+- [ ] Low-risk tasks that skip Gate 4 use Required Human Gate `none`, Approval Status `not required`, and a filled not-required rationale.
 - [ ] Approval artifact is linked when approval is required.
 - [ ] Source artifacts are named with paths and relevant sections or IDs.
 - [ ] Allowed Changes name exact paths or explicitly state `N/A - <reason>`.
