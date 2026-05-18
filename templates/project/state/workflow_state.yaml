@@ -2,11 +2,24 @@
 # This file helps agents resume, but it does not replace artifact contents.
 workflow:
   active_workflow: null
+  workflow_profile: "management/WORKFLOW_PROFILE.md"
+  workflow_mode: null
+  risk_level: null
   active_role: null
   active_artifact: null
   active_task: null
   status: "Draft"
   last_updated: "YYYY-MM-DD"
+
+workflow_routing:
+  gate_0_required: true
+  gate_0_approval_artifact: null
+  research_decision: "unknown"
+  architecture_decision: "unknown"
+  implementation_decision: "unknown"
+  review_qa_decision: "unknown"
+  skipped_gates: []
+  escalation_triggers: []
 
 research_gate:
   required_before_prd_approval: null
@@ -23,6 +36,7 @@ human_review:
   approval_status: "not required"
   approval_artifact: null
   next_human_decision_needed: null
+  skipped_gate_rationale_artifact: "management/WORKFLOW_PROFILE.md"
   gate_definitions: "management/HUMAN_REVIEW_GATES.md"
   approval_log: "management/APPROVALS.md"
 

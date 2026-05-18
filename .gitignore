@@ -1,4 +1,5 @@
 .DS_Store
+*_CN.md
 .agent-dev-os/
 .codex/
 __pycache__/

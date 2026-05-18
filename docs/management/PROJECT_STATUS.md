@@ -6,7 +6,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 
 | Field | Value |
 | --- | --- |
-| Repository Stage | Round 2.5 Approval Metadata Sync |
+| Repository Stage | Round 2.6 Workflow Routing and Optional Gates |
 | Latest Completed Dogfood Round | Round 2 |
 | Round 2 Result | PASS WITH MINOR FIXES |
 | Active Constraint | Documentation and template refinement only; no CLI, dependencies, product code, database, web UI, MCP server, OMX integration, agent runtime, scheduler, service, or validation code. |
@@ -26,6 +26,7 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Round 2.3 | Completed | Research Layer synchronized across root README, root AGENTS, generated-project state templates, evidence confidence fields, and management docs. |
 | Round 2.4 | Completed | Human Review Gates added explicit recorded approval requirements before research, PRD/MVP, architecture, high-risk task execution, implementation exceptions, and release acceptance unlock downstream work. |
 | Round 2.5 | Completed | Approval Metadata Sync added local human approval metadata to product, architecture, and task templates so gate requirements are visible when opening a single artifact. |
+| Round 2.6 | Completed | Workflow Routing and Optional Gates added Gate 0 routing, workflow profiles, conditional research/architecture/task/QA/release gates, and escalation triggers. |
 
 ## Round 2 Findings Captured
 
@@ -75,6 +76,16 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Task approval metadata | `templates/task/task.md` and `templates/task/plan.md`. | Validate before any non-trivial or high-risk task becomes `Ready`. |
 | Deferred P2 items | Template simplification, light/full task split, and gate strictness changes are intentionally deferred. | Revisit only after dogfood evidence. |
 
+## Round 2.6 Workflow Routing and Optional Gates
+
+| Area | Captured As | Follow-Up |
+| --- | --- | --- |
+| Workflow routing | `docs/workflows/workflow_routing.md` defines Light Artifact, Research-first Product, Code Tool, and High-risk Integration workflows. | Use Gate 0 routing before creating the next example. |
+| Workflow profile | `templates/project/management/WORKFLOW_PROFILE.md` records mode, risk, research/architecture/implementation/QA decisions, required gates, skipped gates, and escalation triggers. | Copy into generated projects before product discovery. |
+| Conditional gates | Human review gate docs and templates now say Gate 0 is always required, while Gate 1, Gate 3, Gate 4, Gate 5, and Gate 6 are conditional based on the workflow profile. | Validate with both a light artifact project and the Bilibili research-first example. |
+| Agent rules | Root and project-local `AGENTS.md` require agents to follow the workflow profile and stop when work exceeds the selected mode or risk level. | Keep these rules aligned with future workflow changes. |
+| Management/state sync | Master plan, task board, status, approvals, and workflow state reference workflow mode, skipped gates, and escalation triggers. | Watch for field duplication during future simplification. |
+
 ## Open Management Watchpoints
 
 | Watchpoint | Risk | Proposed Owner |
@@ -86,7 +97,8 @@ This artifact summarizes repository-level status for `agent-dev-os`. It compleme
 | Research claims may be invented. | PRD/MVP may encode unsupported competitor or repository facts. | PM Agent in Research Mode |
 | Reuse may be recommended without license evidence. | Downstream architecture may adopt unsafe or incompatible dependencies. | PM Agent in Research Mode and Architect Agent |
 | Human approval may drift into chat only. | Downstream agents may treat unrecorded decisions as approved scope. | Human owner and Lead Agent |
+| Workflow profile may be skipped. | Agents may over-apply full workflow or skip necessary gates without rationale. | Lead Agent |
 
 ## Proposed Next Round
 
-The next planned round should dogfood the research-first workflow with a new Bilibili video analysis channel example at `examples/bilibili-video-analysis-channel/`. The example should start with `research/`, feed findings into product discovery, and avoid creating product code until a later approved task. After that dogfood pass, simplify repeated handoff and validation blocks, decide whether to add `INTERFACE_SPEC.md`, add a reusable no-runtime checklist, and normalize status vocabulary across task/artifact/state layers.
+The next planned round should dogfood the research-first workflow with a new Bilibili video analysis channel example at `examples/bilibili-video-analysis-channel/`. The example should start with Gate 0 workflow routing, choose the Research-first Product Workflow, fill `research/`, feed findings into product discovery, and avoid creating product code until a later approved task. After that dogfood pass, simplify repeated handoff and validation blocks, decide whether to add `INTERFACE_SPEC.md`, add a reusable no-runtime checklist, and normalize status vocabulary across task/artifact/state layers.

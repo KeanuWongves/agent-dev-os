@@ -15,6 +15,7 @@ This log records repository-level dogfood and template evolution rounds. It is a
 | Round 2.3 | Completed | Synchronized the Research Layer across repository README, root role contracts, generated-project state templates, evidence confidence fields, and management docs. | `README.md`; root `AGENTS.md`; `templates/project/state/`; `templates/project/research/`; `docs/management/` |
 | Round 2.4 | Completed | Added explicit human review gates that define when AI agents may draft artifacts, when they must stop, and which human approvals unlock downstream work. | `docs/workflows/human_review_gates.md`; `templates/project/management/HUMAN_REVIEW_GATES.md`; `templates/project/management/APPROVALS.md`; workflow docs; AGENTS templates |
 | Round 2.5 | Completed | Added local human approval metadata to product, architecture, and task templates so agents can see gate requirements when opening a single artifact. P2 simplification work remains deferred to future dogfood. | `templates/project/product/`; `templates/project/architecture/`; `templates/task/task.md`; `templates/task/plan.md`; `templates/project/README.md` |
+| Round 2.6 | Completed | Added workflow routing and optional gates so Gate 0 selects the correct workflow mode and later research, architecture, task approval, QA, and release gates can be required, optional, waived, or not required with rationale. | `docs/workflows/workflow_routing.md`; `templates/project/management/WORKFLOW_PROFILE.md`; human review gates; AGENTS templates; management/state templates |
 
 ## Round 2 Findings
 
@@ -116,6 +117,20 @@ Round 2.5 synchronizes approval metadata into gate-controlled product, architect
 | Architecture templates | `SYSTEM_DESIGN.md`, `TECH_STACK.md`, `API_SPEC.md`, `CODE_RULES.md`, and `DECISIONS.md` expose local Gate 3 approval metadata when they constrain implementation. |
 | Task templates | `task.md` and `plan.md` expose Gate 4 or Gate 5 approval metadata, readiness checks, and stop conditions. |
 | Project README | Generated projects now state that gate-controlled artifacts must show local approval metadata, not only an approval-log entry. |
+
+## Round 2.6 Scope
+
+Round 2.6 adds workflow routing and optional gates. Gate 0 is now always required as the routing gate, but later gates are conditional based on workflow mode, risk level, required artifacts, skipped-gate rationale, and escalation triggers. This pass does not create the Bilibili example, execute tasks, add runtime machinery, or simplify P2 template friction.
+
+## Round 2.6 Workflow Routing Results
+
+| Area | Result |
+| --- | --- |
+| Workflow routing | Added `docs/workflows/workflow_routing.md` with Light Artifact, Research-first Product, Code Tool, and High-risk Integration workflow modes. |
+| Workflow profile | Added `templates/project/management/WORKFLOW_PROFILE.md` as the Gate 0 routing artifact for generated projects. |
+| Optional gates | Updated human review gate docs and templates so Gate 1, Gate 3, Gate 4, Gate 5, and Gate 6 are conditional when the workflow profile records valid rationale. |
+| Project rules | Updated root and project-local AGENTS rules so agents follow `management/WORKFLOW_PROFILE.md` and stop when work exceeds the selected workflow mode or risk level. |
+| Management/state templates | Master plan, task board, status, approvals, and workflow state now reference workflow mode, skipped gates, and escalation triggers. |
 
 ## Proposed Round 3 Focus
 

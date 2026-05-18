@@ -7,23 +7,39 @@ Template rule: status must be evidence-based. Do not report completion without l
 | Status | Draft |
 | Owner | <Lead Agent or human owner> |
 | Last Updated | YYYY-MM-DD |
-| Source Artifacts | `management/TASK_BOARD.md`, `management/VALIDATION_STATUS.md`, `management/BLOCKERS.md` |
+| Source Artifacts | `management/WORKFLOW_PROFILE.md`, `management/TASK_BOARD.md`, `management/VALIDATION_STATUS.md`, `management/BLOCKERS.md` |
+| Workflow Profile | `management/WORKFLOW_PROFILE.md` |
+| Workflow Mode | <Light Artifact Workflow / Research-first Product Workflow / Code Tool Workflow / High-risk Integration Workflow> |
 | Human Review Gates | `management/HUMAN_REVIEW_GATES.md` |
 | Approval Log | `management/APPROVALS.md` |
 | Required Human Gate | <Gate 0-6 / none> |
-| Approval Status | <not required / pending / approved / waived / blocked> |
+| Approval Status | <not required / pending / approved / approved with limitations / waived / blocked> |
 | Approval Artifact | <APPROVALS row ID or path> |
 | Next Human Decision Needed | <decision or N/A> |
+| Skipped Gates | <none / list with rationale in `management/WORKFLOW_PROFILE.md`> |
+| Escalation Triggers | <active trigger or N/A> |
 
 ## Current Summary
 
 <Summarize current project state in factual terms. Name the active milestone, active tasks, blockers, and validation state.>
 
+## Workflow Profile Status
+
+| Field | Current Value | Evidence |
+| --- | --- | --- |
+| Workflow Mode | <mode> | `management/WORKFLOW_PROFILE.md` |
+| Risk Level | <low / medium / high> | `management/WORKFLOW_PROFILE.md` |
+| Research Decision | <required / optional / not required / waived / blocked> | <artifact or approval ID> |
+| Architecture Decision | <required / light / not required / blocked> | <artifact or approval ID> |
+| Review / QA Decision | <manual artifact inspection / light QA / full QA / not applicable> | <artifact or approval ID> |
+| Skipped Gates | <gates and rationale> | `management/WORKFLOW_PROFILE.md` |
+| Active Escalation Trigger | <trigger or N/A> | <artifact or task ID> |
+
 ## Milestone Status
 
 | Milestone | Status | Required Human Gate | Approval Status | Evidence | Next Action |
 | --- | --- | --- | --- | --- | --- |
-| <milestone> | <Draft/Ready/In Progress/Blocked/Validated> | <Gate 0-6 / none> | <pending / approved / waived / blocked / N/A> | <artifact path or result> | <action> |
+| <milestone> | <Draft/Ready/In Progress/Blocked/Validated> | <Gate 0-6 / none> | <not required / pending / approved / approved with limitations / waived / blocked / N/A> | <artifact path or result> | <action> |
 
 ## Task Status
 
@@ -35,13 +51,13 @@ Template rule: status must be evidence-based. Do not report completion without l
 
 | Gate | Approval Status | Approval Artifact | Next Human Decision Needed | Blocks |
 | --- | --- | --- | --- | --- |
-| Gate 0: Idea Intake Review | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
-| Gate 1: Research Review | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
-| Gate 2: PRD / MVP Approval | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
-| Gate 3: Architecture Approval | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
-| Gate 4: Task Plan Approval | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
-| Gate 5: Implementation Exception Review | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
-| Gate 6: Release / Final Acceptance | <pending / approved / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 0: Idea Intake Review | <pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 1: Research Review | <not required / pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 2: PRD / MVP Approval | <not required / pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 3: Architecture Approval | <not required / pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 4: Task Plan Approval | <not required / pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 5: Implementation Exception Review | <not required / pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
+| Gate 6: Release / Final Acceptance | <not applicable / pending / approved / approved with limitations / waived / blocked / N/A> | <APPROVALS row ID or N/A> | <decision or N/A> | <artifact/workflow> |
 
 ## Blockers and Decisions Needed
 
